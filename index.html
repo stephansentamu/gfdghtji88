@@ -3,8 +3,90 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Rivela AI-Studio</title>
-  <meta name="description" content="Rivela AI-Studio — Premium AI Creatives for Uganda's best brands. AI Winner Pack & AI Brand Builder." />
+
+  <!-- ===== PRIMARY META ===== -->
+  <title>Rivela AI-Studio — AI Creatives for Uganda's Best Brands</title>
+  <meta name="description" content="Rivela AI-Studio makes premium AI images and videos for Uganda's best brands. AI Winner Pack from UGX 70,000. AI Brand Builder for serious growth. Stop the scroll. Start converting." />
+  <meta name="keywords" content="AI creatives Uganda, AI video Uganda, AI images Uganda, brand content Uganda, AI marketing Uganda, social media ads Uganda, AI studio Kampala, Rivela, AI Winner Pack, AI Brand Builder, AI model identity, product photography AI, UGC ads Uganda" />
+  <meta name="author" content="Rivela AI-Studio" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://rivela.online/" />
+
+  <!-- ===== OPEN GRAPH (Facebook / Instagram) ===== -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://rivela.online/" />
+  <meta property="og:title" content="Rivela AI-Studio — AI Creatives for Uganda's Best Brands" />
+  <meta property="og:description" content="Premium AI images and videos for Uganda's brands. AI Winner Pack from UGX 70,000. Consistent models, ad-ready content, premium at every level." />
+  <meta property="og:image" content="https://rivela.online/logo.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:site_name" content="Rivela AI-Studio" />
+  <meta property="og:locale" content="en_UG" />
+
+  <!-- ===== TWITTER CARD ===== -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:url" content="https://rivela.online/" />
+  <meta name="twitter:title" content="Rivela AI-Studio — AI Creatives for Uganda's Best Brands" />
+  <meta name="twitter:description" content="Premium AI images and videos for Uganda's brands. Stop the scroll. Start converting." />
+  <meta name="twitter:image" content="https://rivela.online/logo.png" />
+
+  <!-- ===== FAVICONS ===== -->
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+  <link rel="shortcut icon" href="favicon.ico" />
+  <meta name="theme-color" content="#0a0a0a" />
+  <meta name="msapplication-TileColor" content="#0a0a0a" />
+  <meta name="msapplication-TileImage" content="logo.png" />
+
+  <!-- ===== JSON-LD STRUCTURED DATA ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Rivela AI-Studio",
+    "url": "https://rivela.online/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://rivela.online/logo.png",
+      "width": 512,
+      "height": 512
+    },
+    "description": "Premium AI images and videos for Uganda's best brands. AI Winner Pack and AI Brand Builder services.",
+    "foundingDate": "2025",
+    "areaServed": "Uganda",
+    "sameAs": [
+      "https://www.instagram.com/rivela.aistudio",
+      "https://www.tiktok.com/@rivelaai",
+      "https://wa.me/256707859985"
+    ],
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+256707859985",
+      "contactType": "customer service",
+      "availableLanguage": "English"
+    },
+    "offers": [
+      {
+        "@type": "Offer",
+        "name": "AI Winner Pack",
+        "description": "5 done-for-you AI creatives (3 images + 2 videos), ad-ready, one-time delivery.",
+        "priceCurrency": "UGX",
+        "price": "70000",
+        "url": "https://rivela.online/"
+      },
+      {
+        "@type": "Offer",
+        "name": "AI Brand Builder",
+        "description": "One month of AI brand building — model identity, content library, ad-ready creatives.",
+        "url": "https://rivela.online/"
+      }
+    ]
+  }
+  </script>
+
+  <!-- ===== FONTS ===== -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
@@ -42,7 +124,7 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      transition: opacity 1.5s ease, visibility 1.5s ease;
+      transition: opacity 0.8s ease, visibility 0.8s ease;
     }
     #loadingScreen.hide {
       opacity: 0;
@@ -1762,14 +1844,23 @@
     }
   };
 
-  // ===== LOADING =====
+  // ===== LOADING SCREEN — max 5 seconds =====
+  function hideLoader() {
+    const ls = document.getElementById('loadingScreen');
+    if (ls && !ls.classList.contains('hide')) {
+      ls.classList.add('hide');
+    }
+  }
+  // Hide after 5 seconds no matter what
+  const loaderTimeout = setTimeout(hideLoader, 5000);
+  // Hide as soon as page is fully loaded if that's faster
   window.addEventListener('load', () => {
-    setTimeout(() => {
-      document.getElementById('loadingScreen').classList.add('hide');
-      // Init all carousels after load
-      renderCarousel('free');
-      renderCarousel('biz');
-    }, 3200);
+    clearTimeout(loaderTimeout);
+    // Small delay so the animation isn't jarring on fast connections
+    setTimeout(hideLoader, 800);
+    // Init all carousels after load
+    renderCarousel('free');
+    renderCarousel('biz');
   });
 
   // ===== PAGE NAVIGATION =====
