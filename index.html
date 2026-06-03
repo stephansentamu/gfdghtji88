@@ -1,2172 +1,944 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+<title>CELARA SKINCARE — Beauty. Care. Confidence.</title>
+<meta name="description" content="Celara brings nature's purest ingredients to your skin for visible transformation and lasting radiance.">
+<meta property="og:title" content="CELARA SKINCARE — Beauty. Care. Confidence.">
+<meta property="og:image" content="https://models.valts.online/celara/wlogo.png">
+<meta name="theme-color" content="#ffffff">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{--w:#ffffff;--pw:#fefefe;--bk:#000000;--g55:#555;--g99:#999;--gdd:#ddd;--gee:#eee;--fsans:'Inter',system-ui,sans-serif;--fserif:'Cormorant Garamond',Georgia,serif}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:var(--fsans);background:var(--pw);color:var(--bk);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}a{text-decoration:none;color:inherit}button{cursor:pointer;border:none;background:none;font-family:inherit}input{font-family:inherit}
 
-  <!-- ===== PRIMARY META ===== -->
-  <title>Rivela AI-Studio — AI Creatives for Uganda's Best Brands</title>
-  <meta name="description" content="Rivela AI-Studio makes premium AI images and videos for Uganda's best brands. AI Winner Pack from UGX 70,000. AI Brand Builder for serious growth. Stop the scroll. Start converting." />
-  <meta name="keywords" content="AI creatives Uganda, AI video Uganda, AI images Uganda, brand content Uganda, AI marketing Uganda, social media ads Uganda, AI studio Kampala, Rivela, AI Winner Pack, AI Brand Builder, AI model identity, product photography AI, UGC ads Uganda" />
-  <meta name="author" content="Rivela AI-Studio" />
-  <meta name="robots" content="index, follow" />
-  <link rel="canonical" href="https://rivela.online/" />
+/* PAGE */
+.page{display:none;min-height:100vh;flex-direction:column}.page.active{display:flex}
 
-  <!-- ===== OPEN GRAPH (Facebook / Instagram) ===== -->
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://rivela.online/" />
-  <meta property="og:title" content="Rivela AI-Studio — AI Creatives for Uganda's Best Brands" />
-  <meta property="og:description" content="Premium AI images and videos for Uganda's brands. AI Winner Pack from UGX 70,000. Consistent models, ad-ready content, premium at every level." />
-  <meta property="og:image" content="https://rivela.online/logo.png" />
-  <meta property="og:image:width" content="1200" />
-  <meta property="og:image:height" content="630" />
-  <meta property="og:site_name" content="Rivela AI-Studio" />
-  <meta property="og:locale" content="en_UG" />
+/* MARQUEE */
+.mw{width:100%;background:var(--bk);overflow:hidden;white-space:nowrap}.mt-track{display:inline-flex;animation:mq 22s linear infinite}.mt-track span{color:var(--w);font-size:11px;letter-spacing:.18em;text-transform:uppercase;padding:7px 2.2rem}@keyframes mq{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
 
-  <!-- ===== TWITTER CARD ===== -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:url" content="https://rivela.online/" />
-  <meta name="twitter:title" content="Rivela AI-Studio — AI Creatives for Uganda's Best Brands" />
-  <meta name="twitter:description" content="Premium AI images and videos for Uganda's brands. Stop the scroll. Start converting." />
-  <meta name="twitter:image" content="https://rivela.online/logo.png" />
+/* NAV OVAL */
+.noval{display:inline-flex;align-items:center;background:var(--bk);border-radius:999px;padding:4px;position:relative}
+.noval-i{color:var(--w);font-size:12px;letter-spacing:.08em;padding:8px 18px;cursor:pointer;position:relative;z-index:2;transition:color .3s;white-space:nowrap;font-weight:500}
+.noval-i.on{color:var(--bk)}
+.noval-s{position:absolute;top:4px;height:calc(100% - 8px);background:var(--w);border-radius:999px;transition:all .35s cubic-bezier(.4,0,.2,1);z-index:1}
 
-  <!-- ===== FAVICONS ===== -->
-  <link rel="icon" type="image/x-icon" href="favicon.ico" />
-  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
-  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
-  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
-  <link rel="shortcut icon" href="favicon.ico" />
-  <meta name="theme-color" content="#0a0a0a" />
-  <meta name="msapplication-TileColor" content="#0a0a0a" />
-  <meta name="msapplication-TileImage" content="logo.png" />
+/* SIZE SEL */
+.ssel{display:inline-flex;background:var(--bk);border-radius:999px;padding:3px}.ssel-i{color:var(--w);font-size:12px;padding:7px 22px;border-radius:999px;cursor:pointer;transition:all .3s;letter-spacing:.05em;font-weight:500}.ssel-i.on{background:var(--w);color:var(--bk)}
 
-  <!-- ===== JSON-LD STRUCTURED DATA ===== -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "Rivela AI-Studio",
-    "url": "https://rivela.online/",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://rivela.online/logo.png",
-      "width": 512,
-      "height": 512
-    },
-    "description": "Premium AI images and videos for Uganda's best brands. AI Winner Pack and AI Brand Builder services.",
-    "foundingDate": "2025",
-    "areaServed": "Uganda",
-    "sameAs": [
-      "https://www.instagram.com/rivelaaistudio",
-      "https://www.tiktok.com/@rivela.aistudio",
-      "https://wa.me/256770892824"
-    ],
-    "contactPoint": {
-      "@type": "ContactPoint",
-      "telephone": "+256770892824",
-      "contactType": "customer service",
-      "availableLanguage": "English"
-    },
-    "offers": [
-      {
-        "@type": "Offer",
-        "name": "AI Winner Pack",
-        "description": "5 done-for-you AI creatives (3 images + 2 videos), ad-ready, one-time delivery.",
-        "priceCurrency": "UGX/USD",
-        "price": "70000/18.99",
-        "url": "https://rivela.online/"
-      },
-      {
-        "@type": "Offer",
-        "name": "AI Brand Builder",
-        "description": "One month of AI brand building — model identity, content library, ad-ready creatives.",
-        "url": "https://rivela.online/"
-      }
-    ]
-  }
-  </script>
+/* PRODUCT GRID */
+.pgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+@media(max-width:900px){.pgrid{grid-template-columns:repeat(2,1fr);gap:10px}}
 
-  <!-- ===== FONTS ===== -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
+/* PACKAGE GRID */
+.pkgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+@media(max-width:900px){.pkgrid{grid-template-columns:repeat(2,1fr);gap:10px}}
 
-  <style>
-    /* ===== ROOT VARIABLES ===== */
-    :root {
-      --black: #0a0a0a;
-      --white: #f5f4f0;
-      --grey: #888;
-      --light-grey: #ddd;
-      --dark-grey: #1a1a1a;
-      --radius: 14px;
-      --cinzel: 'Cinzel', serif;
-      --cormorant: 'Cormorant Garamond', serif;
-    }
+/* PRODUCT CARD */
+.pcard{background:var(--w);border:1.5px solid var(--bk);border-radius:8px;overflow:hidden;cursor:pointer;transition:box-shadow .3s}.pcard:hover{box-shadow:0 4px 16px rgba(0,0,0,.08)}
+.pcard-img{width:100%;aspect-ratio:1/1;object-fit:cover;background:var(--gee)}
+.pcard-body{padding:8px 10px}
+.pcard-name{font-weight:600;font-size:12px;line-height:1.3}
+.pcard-price{font-size:11px;color:var(--g55);margin-top:2px}
+.pcard-cap{font-size:10px;color:var(--g99);margin-top:1px}
 
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+/* QTY */
+.qctrl{display:inline-flex;align-items:center;border:1.5px solid var(--bk);border-radius:6px;overflow:hidden}
+.qbtn{width:26px;height:26px;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:600;transition:background .2s}.qbtn:hover{background:var(--gee)}
+.qval{font-size:12px;font-weight:600;min-width:18px;text-align:center}
 
-    body {
-      font-family: var(--cormorant);
-      background: var(--white);
-      color: var(--black);
-      overflow-x: hidden;
-      cursor: default;
-    }
+/* CAROUSEL */
+.csl{position:relative;overflow:hidden;border-radius:8px}.csl-t{display:flex;transition:transform .5s cubic-bezier(.4,0,.2,1)}.csl-sl{min-width:100%;position:relative}.csl-sl img,.csl-sl video{width:100%;display:block}
+.csl-btn{position:absolute;top:50%;transform:translateY(-50%);z-index:3;width:36px;height:36px;background:rgba(255,255,255,.88);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:18px;color:var(--bk);cursor:pointer;transition:background .2s;border:none}.csl-btn:hover{background:#fff}.csl-btn.prv{left:8px}.csl-btn.nxt{right:8px}
+.csl-dots{display:flex;justify-content:center;gap:6px;margin-top:8px}.csl-dot{width:8px;height:8px;border-radius:50%;background:var(--gdd);cursor:pointer;transition:background .3s;border:none}.csl-dot.on{background:var(--bk)}
 
-    /* ===== LOADING SCREEN ===== */
-    #loadingScreen {
-      position: fixed;
-      inset: 0;
-      background: #fff;
-      z-index: 99999;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      transition: opacity 0.8s ease, visibility 0.8s ease;
-    }
-    #loadingScreen.hide {
-      opacity: 0;
-      visibility: hidden;
-    }
-    .loading-title {
-      font-family: var(--cinzel);
-      font-size: clamp(3rem, 8vw, 6rem);
-      font-weight: 700;
-      color: var(--black);
-      letter-spacing: 0.15em;
-      animation: loadGlow 3s ease-in-out infinite;
-    }
-    @keyframes loadGlow {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0.4; filter: blur(1px); }
-    }
-    .loading-bar-wrap {
-      margin-top: 2rem;
-      width: 200px;
-      height: 1px;
-      background: #ddd;
-      overflow: hidden;
-      position: relative;
-    }
-    .loading-bar-light {
-      position: absolute;
-      top: 0; left: -40%;
-      width: 40%;
-      height: 100%;
-      background: linear-gradient(90deg, transparent, var(--black), transparent);
-      animation: barSweep 1.4s ease-in-out infinite;
-    }
-    @keyframes barSweep {
-      from { left: -40%; }
-      to { left: 100%; }
-    }
-    .loading-sub {
-      position: fixed;
-      bottom: 2.5rem;
-      right: 2.5rem;
-      font-family: var(--cinzel);
-      font-size: 0.85rem;
-      letter-spacing: 0.2em;
-      color: #999;
-      animation: loadGlow 3s ease-in-out infinite 0.5s;
-    }
+/* BEFORE/AFTER */
+.ba-wrap{display:grid;grid-template-columns:1fr 1fr;gap:0}.ba-side{position:relative;overflow:hidden;cursor:pointer}.ba-side img{width:100%;aspect-ratio:3/4;object-fit:cover}.ba-lbl{position:absolute;bottom:0;left:0;right:0;background:rgba(0,0,0,.55);color:#fff;font-size:9px;letter-spacing:.12em;text-transform:uppercase;padding:5px;text-align:center;font-weight:500}
 
-    /* ===== PAGE SYSTEM ===== */
-    .page { display: none; min-height: 100vh; }
-    .page.active { display: block; }
+/* OVERLAYS */
+.ov{position:fixed;inset:0;z-index:9999;display:none;flex-direction:column}
+.ov.show{display:flex}
+.ov-bg{background:rgba(255,255,255,.97)}
 
-    /* ===== DARK / LIGHT THEME ===== */
-    .theme-dark { background: var(--black); color: var(--white); }
-    .theme-light { background: var(--white); color: var(--black); }
+/* LIGHTBOX */
+#lb{z-index:10000;background:rgba(0,0,0,.92);align-items:center;justify-content:center}#lb img{max-width:90vw;max-height:85vh;object-fit:contain;border-radius:6px}#lb .lb-x{position:absolute;top:1.2rem;right:1.2rem;color:#fff;font-size:2rem;cursor:pointer}
 
-    /* ===== NAV ===== */
-    nav {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 1.2rem 2.5rem;
-      border-bottom: 1px solid rgba(128,128,128,0.15);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-    }
-    .nav-dark { background: rgba(10,10,10,0.9); border-color: rgba(255,255,255,0.08); }
-    .nav-light { background: rgba(245,244,240,0.92); border-color: rgba(0,0,0,0.08); }
+/* SEARCH */
+#sov{z-index:9998;padding:2rem}.s-input{width:100%;border:none;border-bottom:2px solid var(--bk);font-size:1.1rem;padding:.7rem 0;outline:none;background:transparent}.s-results{margin-top:1.2rem;overflow-y:auto;flex:1}.s-ritem{padding:.7rem 0;border-bottom:1px solid var(--gee);cursor:pointer;display:flex;align-items:center;gap:.8rem}.s-ritem img{width:44px;height:44px;object-fit:cover;border-radius:6px}.s-ritem:hover{background:var(--gee)}
 
-    .nav-logo {
-      cursor: pointer;
-      text-decoration: none;
-      display: flex;
-      align-items: center;
-      height: 160px;
-    }
-    .nav-logo img {
-      height: 160px;
-      width: auto;
-      display: block;
-      object-fit: contain;
-    }
+/* CART */
+#cov{z-index:9997;padding:2rem}.cart-item{display:flex;justify-content:space-between;align-items:center;padding:.6rem 0;border-bottom:1px solid var(--gee)}
 
-    .nav-center {
-      position: absolute;
-      left: 50%;
-      transform: translateX(-50%);
-    }
-    .nav-products-btn {
-      font-family: var(--cinzel);
-      font-size: 0.8rem;
-      letter-spacing: 0.2em;
-      background: none;
-      border: none;
-      cursor: pointer;
-      color: inherit;
-      padding: 0.4rem 0.8rem;
-      position: relative;
-      transition: opacity 0.3s;
-    }
-    .nav-products-btn.glowing {
-      animation: navGlow 2s ease-in-out infinite;
-    }
-    .nav-products-btn.glowing-light {
-      animation: navGlowLight 2s ease-in-out infinite;
-    }
-    @keyframes navGlow {
-      0%, 100% { color: rgba(255,255,255,0.5); text-shadow: none; }
-      50% { color: #fff; text-shadow: 0 0 15px rgba(255,255,255,0.6); }
-    }
-    @keyframes navGlowLight {
-      0%, 100% { color: rgba(0,0,0,0.4); }
-      50% { color: #000; text-shadow: 0 0 10px rgba(0,0,0,0.3); }
-    }
+/* MENU */
+#mov{z-index:9996;align-items:center;justify-content:center;gap:2rem}.mov-i{font-size:1.2rem;font-weight:600;letter-spacing:.08em;cursor:pointer}
 
-    .nav-right {
-      display: flex;
-      align-items: center;
-      gap: 1.5rem;
-    }
-    .nav-mode-toggle {
-      display: flex;
-      align-items: center;
-      gap: 0.3rem;
-      font-family: var(--cinzel);
-      font-size: 0.75rem;
-      letter-spacing: 0.15em;
-    }
-    .mode-btn {
-      background: none;
-      border: none;
-      cursor: pointer;
-      font-family: var(--cinzel);
-      font-size: 0.75rem;
-      letter-spacing: 0.15em;
-      color: inherit;
-      padding: 0.3rem 0.5rem;
-      transition: all 0.3s;
-      opacity: 0.45;
-    }
-    .mode-btn.active-mode { opacity: 1; font-weight: 700; }
-    .mode-btn.glowing-mode {
-      opacity: 0.6;
-      animation: navGlow 2s ease-in-out infinite;
-    }
-    .mode-btn.glowing-mode-light {
-      opacity: 0.6;
-      animation: navGlowLight 2s ease-in-out infinite;
-    }
-    .mode-separator { opacity: 0.3; font-size: 0.7rem; }
+/* EXPANDABLE */
+.exp{border-top:1px solid var(--gee)}.exp-h{display:flex;justify-content:space-between;align-items:center;padding:10px 0;cursor:pointer;font-size:12px;font-weight:600;letter-spacing:.04em}.exp-c{max-height:0;overflow:hidden;transition:max-height .4s ease;font-size:11px;line-height:1.7;color:var(--g55)}.exp-c.open{max-height:500px;padding-bottom:10px}
 
-    /* ===== MOBILE NAV ===== */
-    .mobile-menu-btn {
-      display: none;
-      background: none;
-      border: none;
-      cursor: pointer;
-      flex-direction: column;
-      gap: 5px;
-      padding: 4px;
-      animation: navGlow 2.5s ease-in-out infinite;
-    }
-    .mobile-menu-btn span {
-      display: block;
-      width: 22px;
-      height: 1.5px;
-      background: currentColor;
-      transition: all 0.3s;
-    }
-    .mobile-menu-btn.light-mode-menu {
-      animation: navGlowLight 2.5s ease-in-out infinite;
-    }
-    .mobile-overlay {
-      display: none;
-      position: fixed;
-      inset: 0;
-      z-index: 200;
-      background: rgba(0,0,0,0.5);
-      backdrop-filter: blur(4px);
-    }
-    .mobile-overlay.open { display: block; }
-    .mobile-panel {
-      position: fixed;
-      top: 0; right: 0;
-      width: min(300px, 85vw);
-      height: 100vh;
-      background: #fff;
-      z-index: 201;
-      padding: 2rem 1.5rem;
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-      transform: translateX(100%);
-      transition: transform 0.35s cubic-bezier(0.16,1,0.3,1);
-    }
-    .mobile-panel.open { transform: translateX(0); }
-    .mobile-panel-close {
-      align-self: flex-end;
-      background: none;
-      border: none;
-      font-size: 1.5rem;
-      cursor: pointer;
-      color: #000;
-      margin-bottom: 1rem;
-    }
-    .mobile-mode-row {
-      display: flex;
-      gap: 0.5rem;
-      margin-bottom: 0.5rem;
-    }
-    .mobile-mode-btn {
-      flex: 1;
-      padding: 0.7rem;
-      border: 1px solid #ddd;
-      border-radius: 8px;
-      background: #f5f4f0;
-      font-family: var(--cinzel);
-      font-size: 0.75rem;
-      letter-spacing: 0.1em;
-      cursor: pointer;
-      color: #000;
-      transition: all 0.3s;
-    }
-    .mobile-mode-btn.active-mode {
-      background: #000;
-      color: #fff;
-      border-color: #000;
-    }
-    .mobile-mode-btn.glowing-mobile {
-      animation: navGlowLight 2s ease-in-out infinite;
-      border-color: #000;
-    }
-    .mobile-panel-btn {
-      width: 100%;
-      padding: 0.85rem;
-      border-radius: 10px;
-      border: 1px solid #ddd;
-      background: #f5f4f0;
-      font-family: var(--cinzel);
-      font-size: 0.8rem;
-      letter-spacing: 0.12em;
-      cursor: pointer;
-      color: #000;
-      transition: all 0.3s;
-    }
-    .mobile-panel-btn:hover { background: #000; color: #fff; border-color: #000; }
+/* BTN */
+.btn-bk{background:var(--bk);color:var(--w);padding:8px 20px;border-radius:6px;font-size:11px;font-weight:600;letter-spacing:.06em;cursor:pointer;transition:opacity .2s;border:none}.btn-bk:hover{opacity:.85}
 
-    /* ===== ROCKET BUTTON ===== */
-    .rocket-btn {
-      --primary: #222;
-      --neutral-1: #1a1a1a;
-      --neutral-2: #0f0f0f;
-      --radius: 12px;
-      cursor: pointer;
-      border-radius: var(--radius);
-      border: none;
-      box-shadow: 0 0.5px 0.5px 1px rgba(0,0,0,0.3), 0 8px 20px rgba(0,0,0,0.25);
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-      transition: all 0.3s ease;
-      min-width: 160px;
-      padding: 14px 20px;
-      height: 52px;
-      font-family: var(--cinzel);
-      font-size: 0.75rem;
-      font-weight: 600;
-      letter-spacing: 0.12em;
-      color: #fff;
-      background: var(--neutral-1);
-      overflow: hidden;
-    }
-    .rocket-btn:hover { transform: scale(1.02); box-shadow: 0 0 1px 2px rgba(255,255,255,0.15), 0 12px 28px rgba(0,0,0,0.35); }
-    .rocket-btn:active { transform: scale(0.98); }
-    .rocket-btn::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      border-radius: var(--radius);
-      border: 2px solid transparent;
-      background: linear-gradient(var(--neutral-1), var(--neutral-2)) padding-box,
-                  linear-gradient(to bottom, rgba(255,255,255,0.08), rgba(0,0,0,0.3)) border-box;
-      z-index: 0;
-      transition: all 0.4s ease;
-    }
-    .rocket-btn::before {
-      content: "";
-      inset: 5px;
-      position: absolute;
-      background: linear-gradient(to top, var(--neutral-1), var(--neutral-2));
-      border-radius: 8px;
-      filter: blur(0.5px);
-      z-index: 0;
-    }
-    .btn-outline {
-      position: absolute;
-      border-radius: inherit;
-      overflow: hidden;
-      z-index: 1;
-      opacity: 0;
-      transition: opacity 0.4s ease;
-      inset: -2px -3.5px;
-    }
-    .btn-outline::before {
-      content: "";
-      position: absolute;
-      inset: -100%;
-      background: conic-gradient(from 180deg, transparent 60%, rgb(80,80,80) 80%, transparent 100%);
-      animation: btnSpin 2s linear infinite;
-      animation-play-state: paused;
-    }
-    @keyframes btnSpin { to { transform: rotate(360deg); } }
-    .rocket-btn:hover .btn-outline { opacity: 1; }
-    .rocket-btn:hover .btn-outline::before { animation-play-state: running; }
-    .btn-state {
-      padding-left: 26px;
-      z-index: 2;
-      display: flex;
-      align-items: center;
-      position: relative;
-    }
-    .btn-state p { display: flex; align-items: center; justify-content: center; gap: 1px; }
-    .btn-state p span {
-      display: block;
-      opacity: 0;
-      animation: btnSlideDown 0.8s ease forwards calc(var(--i) * 0.03s);
-    }
-    .rocket-btn:hover .btn-state p span {
-      opacity: 1;
-      animation: btnWave 0.5s ease forwards calc(var(--i) * 0.02s);
-    }
-    .rocket-btn:focus .btn-state p span {
-      opacity: 1;
-      animation: btnDisappear 0.6s ease forwards calc(var(--i) * 0.03s);
-    }
-    @keyframes btnWave {
-      30% { opacity:1; transform: translateY(4px); }
-      50% { opacity:1; transform: translateY(-3px); color: #aaa; }
-      100% { opacity:1; transform: translateY(0); }
-    }
-    @keyframes btnSlideDown {
-      0% { opacity:0; transform: translateY(-20px) rotate(-90deg); color: #aaa; filter: blur(5px); }
-      30% { opacity:1; transform: translateY(4px); filter: blur(0); }
-      50% { opacity:1; transform: translateY(-3px); }
-      100% { opacity:1; transform: translateY(0); }
-    }
-    @keyframes btnDisappear {
-      from { opacity:1; }
-      to { opacity:0; transform: translateX(5px) translateY(20px); filter: blur(5px); }
-    }
-    .btn-icon {
-      position: absolute;
-      left: 0; top: 0; bottom: 0;
-      margin: auto;
-      width: 24px; height: 24px;
-      transform: scale(1.15);
-      transition: all 0.3s ease;
-      display: flex; align-items: center; justify-content: center;
-      z-index: 3;
-    }
-    .rocket-btn:hover .btn-icon { transform: rotate(45deg) scale(1.15); }
-    .rocket-btn:focus .btn-icon { transform: scale(1.15); }
-    .rocket-btn:focus .btn-icon svg { animation: btnTakeOff 0.8s linear forwards; }
-    @keyframes btnTakeOff {
-      0% { opacity:1; }
-      60% { opacity:1; transform: translateX(60px) rotate(45deg) scale(2); }
-      100% { opacity:0; transform: translateX(140px) rotate(45deg) scale(0); }
-    }
-    .btn-state-sent { display: none; z-index: 2; padding-left: 26px; position: relative; }
-    .rocket-btn:focus .btn-state-default { position: absolute; }
-    .rocket-btn:focus .btn-state-sent {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      font-family: var(--cinzel);
-      font-size: 0.75rem;
-      letter-spacing: 0.12em;
-      color: #fff;
-    }
-    .rocket-btn:focus .btn-state-sent span {
-      opacity:0;
-      animation: btnSlideDown 0.8s ease forwards calc(var(--i) * 0.2s);
-    }
-    .rocket-btn:focus .btn-state-sent svg {
-      opacity:0;
-      animation: btnAppear 1.2s ease forwards 0.8s;
-    }
-    @keyframes btnAppear {
-      0% { opacity:0; transform: scale(4) rotate(-40deg); filter: blur(4px); }
-      30% { opacity:1; transform: scale(0.6); filter: blur(1px); }
-      50% { opacity:1; transform: scale(1.2); filter: blur(0); }
-      100% { opacity:1; transform: scale(1); }
-    }
+/* DESKTOP NAV */
+.dnav{display:flex;align-items:center;justify-content:space-between}
+.mnav{display:none}
+@media(max-width:768px){
+  .dnav{display:none !important}
+  .mnav{display:flex !important}
+  .mnav-row1{display:flex;align-items:center;justify-content:space-between;width:100%;padding:8px 0}
+  .mnav-row2{display:flex;justify-content:center;width:100%;padding:4px 0 8px}
+}
 
-    /* Disabled button state */
-    .rocket-btn.disabled-btn {
-      opacity: 0.35;
-      pointer-events: none;
-      cursor: not-allowed;
-    }
+/* SUGGEST GRID */
+.sggrid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+@media(max-width:600px){.sggrid{grid-template-columns:repeat(2,1fr);gap:8px}}
 
-    /* ===== MAIN LAYOUT ===== */
-    .page-inner {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 2.5rem 4rem;
-    }
+/* PD LAYOUT */
+.pd-lay{display:grid;grid-template-columns:1fr 1fr;gap:2rem}
+@media(max-width:768px){.pd-lay{grid-template-columns:1fr;gap:1.2rem}}
 
-    /* ===== MESSAGE SECTIONS ===== */
-    .msg-block {
-      padding: 3rem 0 2rem;
-      max-width: 680px;
-    }
-    .msg-block h1 {
-      font-family: var(--cinzel);
-      font-size: clamp(1.6rem, 3.5vw, 2.4rem);
-      font-weight: 400;
-      line-height: 1.35;
-      letter-spacing: 0.05em;
-      margin-bottom: 1rem;
-    }
-    .msg-block p {
-      font-size: clamp(1rem, 1.5vw, 1.15rem);
-      line-height: 1.8;
-      opacity: 0.7;
-      font-weight: 300;
-    }
-    .msg-bottom { padding: 2.5rem 0 1.5rem; }
+/* HOME 2 BOX */
+.h2box{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media(max-width:600px){.h2box{grid-template-columns:1fr;gap:10px}}
 
-    /* ===== MEDIA GRID ===== */
-    .media-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      grid-template-rows: auto auto;
-      gap: 12px;
-      margin: 2rem 0;
-      position: relative;
-    }
+/* FOOTER */
+.ftr-desktop{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.8rem}
+.ftr-phone{display:none;flex-direction:column;align-items:center;gap:.8rem}
+@media(max-width:600px){.ftr-desktop{display:none !important}.ftr-phone{display:flex !important}}
 
-    /* Top two video boxes */
-    .video-box {
-      background: #111;
-      border-radius: 12px;
-      overflow: hidden;
-      aspect-ratio: 16/9;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-      cursor: pointer;
-      transition: transform 0.3s;
-    }
-    .video-box:hover { transform: scale(1.01); }
-    .video-box iframe, .video-box video {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      border: none;
-    }
-    .video-placeholder {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 0.8rem;
-      color: rgba(255,255,255,0.3);
-      font-family: var(--cinzel);
-      font-size: 0.7rem;
-      letter-spacing: 0.15em;
-      height: 100%;
-      width: 100%;
-    }
-    .video-placeholder svg { opacity: 0.4; }
-    .video-link-input {
-      position: absolute;
-      bottom: 10px; left: 10px; right: 10px;
-      background: rgba(0,0,0,0.7);
-      border: 1px solid rgba(255,255,255,0.15);
-      border-radius: 6px;
-      padding: 6px 10px;
-      color: #fff;
-      font-family: var(--cormorant);
-      font-size: 0.85rem;
-      display: none;
-    }
-
-    /* Bottom row: circles + center carousel */
-    .media-bottom-row {
-      grid-column: 1 / -1;
-      display: grid;
-      grid-template-columns: 90px 1fr 90px;
-      gap: 12px;
-      align-items: center;
-      margin-top: 0;
-    }
-
-    /* Center carousel */
-    .carousel-box {
-      background: #111;
-      border-radius: 12px;
-      overflow: hidden;
-      aspect-ratio: 4/3;
-      position: relative;
-      cursor: pointer;
-    }
-    .carousel-box img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: none;
-      transition: opacity 0.4s;
-    }
-    .carousel-box img.active { display: block; }
-    .carousel-placeholder {
-      width: 100%;
-      height: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: rgba(255,255,255,0.25);
-      font-family: var(--cinzel);
-      font-size: 0.65rem;
-      letter-spacing: 0.15em;
-      flex-direction: column;
-      gap: 0.6rem;
-    }
-    .carousel-dots {
-      position: absolute;
-      bottom: 10px;
-      left: 50%;
-      transform: translateX(-50%);
-      display: flex;
-      gap: 5px;
-    }
-    .carousel-dot {
-      width: 6px; height: 6px;
-      border-radius: 50%;
-      background: rgba(255,255,255,0.35);
-      cursor: pointer;
-      transition: background 0.3s;
-    }
-    .carousel-dot.active { background: rgba(255,255,255,0.85); }
-    .carousel-nav {
-      position: absolute;
-      top: 50%; transform: translateY(-50%);
-      background: rgba(0,0,0,0.4);
-      border: none;
-      color: #fff;
-      width: 28px; height: 28px;
-      border-radius: 50%;
-      cursor: pointer;
-      font-size: 0.9rem;
-      display: flex; align-items: center; justify-content: center;
-      transition: background 0.3s;
-      backdrop-filter: blur(4px);
-    }
-    .carousel-nav:hover { background: rgba(0,0,0,0.7); }
-    .carousel-nav.prev-nav { left: 8px; }
-    .carousel-nav.next-nav { right: 8px; }
-
-    /* Circular image blocks */
-    .circle-block {
-      width: 88px;
-      height: 88px;
-      border-radius: 50%;
-      overflow: hidden;
-      cursor: pointer;
-      background: #111;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: transform 0.3s, box-shadow 0.3s;
-      position: relative;
-      flex-shrink: 0;
-    }
-    .circle-block:hover { transform: scale(1.06); box-shadow: 0 8px 25px rgba(0,0,0,0.5); }
-    .circle-block img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-    .circle-placeholder {
-      color: rgba(255,255,255,0.2);
-      font-size: 0.55rem;
-      font-family: var(--cinzel);
-      letter-spacing: 0.1em;
-      text-align: center;
-      padding: 10px;
-    }
-
-    /* Lightbox */
-    .lightbox {
-      display: none;
-      position: fixed;
-      inset: 0;
-      z-index: 500;
-      background: rgba(0,0,0,0.92);
-      backdrop-filter: blur(8px);
-      align-items: center;
-      justify-content: center;
-    }
-    .lightbox.open { display: flex; }
-    .lightbox-inner {
-      position: relative;
-      max-width: min(600px, 90vw);
-      width: 100%;
-    }
-    .lightbox-close {
-      position: absolute;
-      top: -40px; right: 0;
-      background: rgba(255,255,255,0.1);
-      border: 1px solid rgba(255,255,255,0.2);
-      border-radius: 50%;
-      width: 32px; height: 32px;
-      color: #fff;
-      font-size: 1.2rem;
-      cursor: pointer;
-      display: flex; align-items: center; justify-content: center;
-      transition: background 0.3s;
-    }
-    .lightbox-close:hover { background: rgba(255,255,255,0.2); }
-    .lightbox img {
-      width: 100%;
-      border-radius: 10px;
-      display: block;
-    }
-
-    /* ===== BOTTOM ROW ===== */
-    .page-footer {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 3rem 0 1rem;
-      border-top: 1px solid rgba(128,128,128,0.15);
-    }
-    .social-icons {
-      display: flex;
-      gap: 1.2rem;
-    }
-    .social-icon-link {
-      width: 42px; height: 42px;
-      border-radius: 10px;
-      display: flex; align-items: center; justify-content: center;
-      text-decoration: none;
-      color: inherit;
-      transition: all 0.3s;
-      border: 1px solid rgba(128,128,128,0.2);
-    }
-    .social-icon-link:hover { border-color: currentColor; transform: translateY(-2px); }
-    .social-icon-link svg { width: 18px; height: 18px; fill: currentColor; }
-    .footer-logo {
-      font-family: var(--cinzel);
-      font-size: 0.75rem;
-      letter-spacing: 0.2em;
-      opacity: 0.4;
-    }
-
-    /* ===== PROJECT INFO FORM LINE ===== */
-    .project-access-group {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 0;
-      margin-top: 2rem;
-      position: relative;
-    }
-    .project-line {
-      width: 1px;
-      height: 40px;
-      background: rgba(128,128,128,0.35);
-      margin-left: 80px;
-    }
-
-    /* ===== PRODUCTS PAGE ===== */
-    .products-grid {
-      display: flex;
-      flex-direction: column;
-      gap: 2rem;
-      padding: 2rem 0;
-      max-width: 700px;
-      margin: 0 auto;
-    }
-    .product-card {
-      border: 1px solid rgba(128,128,128,0.2);
-      border-radius: 16px;
-      padding: 2.5rem;
-      background: rgba(0,0,0,0.04);
-      transition: border-color 0.3s;
-    }
-    .product-card:hover { border-color: rgba(128,128,128,0.4); }
-    .product-tag {
-      font-family: var(--cinzel);
-      font-size: 0.65rem;
-      letter-spacing: 0.25em;
-      opacity: 0.5;
-      margin-bottom: 0.7rem;
-    }
-    .product-title {
-      font-family: var(--cinzel);
-      font-size: clamp(1.4rem, 3vw, 2rem);
-      font-weight: 400;
-      margin-bottom: 1rem;
-      letter-spacing: 0.08em;
-    }
-    .product-desc {
-      font-size: 1.05rem;
-      line-height: 1.75;
-      opacity: 0.65;
-      font-weight: 300;
-      margin-bottom: 1.8rem;
-    }
-    .product-card-footer {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 1rem;
-    }
-    .product-price {
-      font-family: var(--cinzel);
-      font-size: 0.85rem;
-      letter-spacing: 0.1em;
-      opacity: 0.6;
-    }
-    .back-btn {
-      background: none;
-      border: none;
-      cursor: pointer;
-      font-family: var(--cinzel);
-      font-size: 0.75rem;
-      letter-spacing: 0.15em;
-      opacity: 0.5;
-      color: inherit;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      transition: opacity 0.3s;
-      padding: 0;
-      margin-bottom: 2rem;
-    }
-    .back-btn:hover { opacity: 1; }
-
-    /* ===== PROJECT INFO PAGE ===== */
-    .form-container {
-      max-width: 560px;
-      margin: 0 auto;
-      padding: 2rem 0 4rem;
-    }
-    .form-field {
-      margin-bottom: 1.8rem;
-    }
-    .form-label {
-      display: block;
-      font-family: var(--cinzel);
-      font-size: 0.72rem;
-      letter-spacing: 0.18em;
-      margin-bottom: 0.6rem;
-      opacity: 0.6;
-    }
-    .form-label .required { color: #999; }
-    .form-input, .form-textarea {
-      width: 100%;
-      background: transparent;
-      border: none;
-      border-bottom: 1px solid rgba(0,0,0,0.2);
-      padding: 0.6rem 0;
-      font-family: var(--cormorant);
-      font-size: 1.1rem;
-      color: var(--black);
-      outline: none;
-      transition: border-color 0.3s;
-      font-weight: 300;
-    }
-    .form-input:focus, .form-textarea:focus { border-bottom-color: var(--black); }
-    .form-textarea { resize: vertical; min-height: 160px; }
-    .form-input::placeholder, .form-textarea::placeholder { opacity: 0.3; }
-
-    /* Project type chips */
-    .chips-grid {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-top: 0.5rem;
-    }
-    .chip {
-      padding: 6px 14px;
-      border-radius: 20px;
-      border: 1px solid rgba(0,0,0,0.2);
-      font-family: var(--cormorant);
-      font-size: 0.95rem;
-      cursor: pointer;
-      transition: all 0.25s;
-      color: var(--black);
-      background: transparent;
-      font-weight: 400;
-    }
-    .chip:hover { border-color: var(--black); background: rgba(0,0,0,0.04); }
-    .chip.selected { background: var(--black); color: #fff; border-color: var(--black); }
-
-    /* Retainer buttons */
-    .retainer-btns {
-      display: flex;
-      gap: 8px;
-      margin-top: 0.5rem;
-    }
-    .retainer-btn {
-      padding: 6px 18px;
-      border-radius: 20px;
-      border: 1px solid rgba(0,0,0,0.2);
-      font-family: var(--cormorant);
-      font-size: 0.95rem;
-      cursor: pointer;
-      transition: all 0.25s;
-      color: var(--black);
-      background: transparent;
-    }
-    .retainer-btn:hover { border-color: var(--black); }
-    .retainer-btn.selected { background: var(--black); color: #fff; border-color: var(--black); }
-
-    /* Form submit button area */
-    .form-submit-area {
-      margin-top: 2.5rem;
-      display: flex;
-      justify-content: center;
-    }
-
-    /* ===== TOP CIRCLE VIDEO ===== */
-    .media-grid-wrap {
-      position: relative;
-      margin: 2rem 0;
-    }
-    .top-circle-video {
-      position: absolute;
-      top: -48px;
-      left: 50%;
-      transform: translateX(-50%);
-      z-index: 10;
-      width: 90px;
-      height: 90px;
-      border-radius: 50%;
-      overflow: hidden;
-      cursor: pointer;
-      border: 2px solid rgba(255,255,255,0.15);
-      box-shadow: 0 0 0 0 rgba(255,255,255,0.3);
-      animation: circleVideoPulse 2.5s ease-in-out infinite;
-      transition: transform 0.3s;
-    }
-    .top-circle-video:hover { transform: translateX(-50%) scale(1.08); }
-    @keyframes circleVideoPulse {
-      0%, 100% { box-shadow: 0 0 0 0 rgba(255,255,255,0.35); border-color: rgba(255,255,255,0.15); }
-      50% { box-shadow: 0 0 0 8px rgba(255,255,255,0); border-color: rgba(255,255,255,0.5); }
-    }
-    .top-circle-video video {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-    /* Play hint overlay on circle video */
-    .circle-video-hint {
-      position: absolute;
-      inset: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      pointer-events: none;
-    }
-    .circle-video-hint svg {
-      width: 22px;
-      height: 22px;
-      opacity: 0.75;
-      animation: playHintGlow 2.5s ease-in-out infinite;
-      filter: drop-shadow(0 0 4px rgba(255,255,255,0.6));
-    }
-    @keyframes playHintGlow {
-      0%, 100% { opacity: 0.75; filter: drop-shadow(0 0 4px rgba(255,255,255,0.5)); }
-      50% { opacity: 0.35; filter: drop-shadow(0 0 10px rgba(255,255,255,0.9)) blur(0.5px); }
-    }
-    /* Light theme version for business page */
-    .top-circle-video.light-circle {
-      border-color: rgba(0,0,0,0.15);
-      animation: circleVideoPulseLight 2.5s ease-in-out infinite;
-    }
-    @keyframes circleVideoPulseLight {
-      0%, 100% { box-shadow: 0 0 0 0 rgba(0,0,0,0.2); border-color: rgba(0,0,0,0.12); }
-      50% { box-shadow: 0 0 0 8px rgba(0,0,0,0); border-color: rgba(0,0,0,0.4); }
-    }
-    .top-circle-video.light-circle .circle-video-hint svg {
-      filter: drop-shadow(0 0 4px rgba(0,0,0,0.4));
-    }
-    @keyframes playHintGlowDark {
-      0%, 100% { opacity: 0.6; filter: drop-shadow(0 0 4px rgba(0,0,0,0.4)); }
-      50% { opacity: 0.25; filter: drop-shadow(0 0 10px rgba(0,0,0,0.7)) blur(0.5px); }
-    }
-    .top-circle-video.light-circle .circle-video-hint svg {
-      animation: playHintGlowDark 2.5s ease-in-out infinite;
-    }
-
-    /* Bottom circle video (below carousel, above message) */
-    .bottom-circle-video-wrap {
-      display: flex;
-      justify-content: center;
-      margin: 2rem 0 0.5rem;
-    }
-    .bottom-circle-video {
-      width: 90px;
-      height: 90px;
-      border-radius: 50%;
-      overflow: hidden;
-      cursor: pointer;
-      border: 2px solid rgba(255,255,255,0.15);
-      animation: circleVideoPulse 2.5s ease-in-out infinite;
-      transition: transform 0.3s;
-      position: relative;
-      flex-shrink: 0;
-    }
-    .bottom-circle-video:hover { transform: scale(1.08); }
-    .bottom-circle-video video { width:100%; height:100%; object-fit:cover; display:block; }
-    .bottom-circle-video.light-circle {
-      border-color: rgba(0,0,0,0.15);
-      animation: circleVideoPulseLight 2.5s ease-in-out infinite;
-    }
-
-    /* ===== TOP CIRCLE VIDEO ===== */
-    .video-hand-hint {
-      position: absolute;
-      bottom: 10px;
-      right: 10px;
-      width: 32px;
-      height: 32px;
-      pointer-events: none;
-      z-index: 5;
-      animation: handGlow 2s ease-in-out infinite;
-    }
-    .video-hand-hint img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-      filter: drop-shadow(0 0 6px rgba(255,255,255,0.5));
-    }
-    @keyframes handGlow {
-      0%, 100% { opacity: 0.9; filter: drop-shadow(0 0 4px rgba(255,255,255,0.4)); }
-      50% { opacity: 0.45; filter: drop-shadow(0 0 12px rgba(255,255,255,0.8)) blur(0.5px); }
-    }
-
-    /* Video fullscreen lightbox */
-    .video-lightbox {
-      display: none;
-      position: fixed;
-      inset: 0;
-      z-index: 600;
-      background: rgba(0,0,0,0.96);
-      align-items: center;
-      justify-content: center;
-      backdrop-filter: blur(8px);
-    }
-    .video-lightbox.open { display: flex; }
-    .video-lightbox-inner {
-      position: relative;
-      width: min(92vw, 960px);
-    }
-    .video-lightbox-close {
-      position: absolute;
-      top: -42px;
-      right: 0;
-      background: rgba(255,255,255,0.1);
-      border: 1px solid rgba(255,255,255,0.2);
-      border-radius: 50%;
-      width: 34px; height: 34px;
-      color: #fff;
-      font-size: 1.2rem;
-      cursor: pointer;
-      display: flex; align-items: center; justify-content: center;
-      transition: background 0.3s;
-    }
-    .video-lightbox-close:hover { background: rgba(255,255,255,0.22); }
-    .video-lightbox video {
-      width: 100%;
-      border-radius: 10px;
-      display: block;
-      max-height: 80vh;
-    }
-
-    /* Circle prev/next nav */
-    .circle-prev, .circle-next {
-      position: absolute;
-      top: 50%; transform: translateY(-50%);
-      background: rgba(0,0,0,0.55);
-      border: none;
-      color: #fff;
-      width: 18px; height: 18px;
-      border-radius: 50%;
-      cursor: pointer;
-      font-size: 0.65rem;
-      display: flex; align-items: center; justify-content: center;
-      transition: background 0.2s;
-      z-index: 5;
-      line-height: 1;
-    }
-    .circle-prev:hover, .circle-next:hover { background: rgba(0,0,0,0.85); }
-    .circle-prev { left: 3px; }
-    .circle-next { right: 3px; }
-
-    /* Dark theme form inputs (freelancer inquiry) */
-    .free-input {
-      color: #fff !important;
-      border-bottom-color: rgba(255,255,255,0.2) !important;
-    }
-    .free-input:focus { border-bottom-color: rgba(255,255,255,0.7) !important; }
-    .free-input::placeholder { color: rgba(255,255,255,0.25) !important; }
-    .free-chip {
-      color: rgba(255,255,255,0.7) !important;
-      border-color: rgba(255,255,255,0.2) !important;
-    }
-    .free-chip:hover { border-color: rgba(255,255,255,0.6) !important; background: rgba(255,255,255,0.06) !important; }
-    .free-chip.selected { background: #fff !important; color: #000 !important; border-color: #fff !important; }
-    .free-retainer-btn {
-      color: rgba(255,255,255,0.7) !important;
-      border-color: rgba(255,255,255,0.2) !important;
-    }
-    .free-retainer-btn:hover { border-color: rgba(255,255,255,0.6) !important; }
-    .free-retainer-btn.selected { background: #fff !important; color: #000 !important; border-color: #fff !important; }
-
-    /* ===== MOBILE ===== */
-    @media (max-width: 768px) {
-      .page-inner { padding: 0 1.2rem 3rem; }
-      nav { padding: 1rem 1.2rem; }
-      .nav-center, .nav-right { display: none; }
-      .mobile-menu-btn { display: flex; }
-
-      .media-grid { grid-template-columns: 1fr; gap: 10px; }
-      .video-box { grid-column: 1; }
-      .media-bottom-row {
-        grid-template-columns: 70px 1fr 70px;
-        gap: 8px;
-      }
-      .circle-block { width: 68px; height: 68px; }
-
-      .product-card { padding: 1.8rem; }
-      .product-card-footer { flex-direction: column; align-items: flex-start; }
-      .project-line { margin-left: 70px; }
-    }
-
-    /* ===== ANIMATIONS ===== */
-    .fade-in {
-      opacity: 0;
-      animation: fadeInUp 0.7s ease forwards;
-    }
-    @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(16px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    .fade-in-delay-1 { animation-delay: 0.1s; }
-    .fade-in-delay-2 { animation-delay: 0.2s; }
-    .fade-in-delay-3 { animation-delay: 0.3s; }
-    .fade-in-delay-4 { animation-delay: 0.45s; }
-    .fade-in-delay-5 { animation-delay: 0.6s; }
-  </style>
+::-webkit-scrollbar{width:5px}::-webkit-scrollbar-track{background:transparent}::-webkit-scrollbar-thumb{background:#ccc;border-radius:3px}
+.container{width:100%;max-width:1100px;margin:0 auto;padding:0 16px}
+</style>
 </head>
 <body>
 
-<!-- ===== LOADING SCREEN ===== -->
-<div id="loadingScreen">
-  <div class="loading-title">RIVELA</div>
-  <div class="loading-bar-wrap">
-    <div class="loading-bar-light"></div>
-  </div>
-  <div class="loading-sub">AI-STUDIO</div>
+<!-- LIGHTBOX -->
+<div class="ov ov-bg" id="lb" onclick="closeLB()">
+  <img id="lb-img" src="" alt="Preview">
+  <span class="lb-x" onclick="closeLB()">&times;</span>
 </div>
 
-<!-- ===== LIGHTBOX ===== -->
-<div class="lightbox" id="lightbox">
-  <div class="lightbox-inner">
-    <button class="lightbox-close" onclick="closeLightbox()">×</button>
-    <img id="lightboxImg" src="" alt="" />
-    <div id="lightboxGalleryNav" style="display:none; justify-content:space-between; margin-top:0.8rem;">
-      <button onclick="lightboxPrev()" style="background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.2);color:#fff;padding:0.5rem 1.2rem;border-radius:8px;cursor:pointer;font-family:var(--cinzel);font-size:0.8rem;letter-spacing:0.1em;transition:background 0.2s;" onmouseover="this.style.background='rgba(255,255,255,0.22)'" onmouseout="this.style.background='rgba(255,255,255,0.12)'">‹ Prev</button>
-      <button onclick="lightboxNext()" style="background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.2);color:#fff;padding:0.5rem 1.2rem;border-radius:8px;cursor:pointer;font-family:var(--cinzel);font-size:0.8rem;letter-spacing:0.1em;transition:background 0.2s;" onmouseover="this.style.background='rgba(255,255,255,0.22)'" onmouseout="this.style.background='rgba(255,255,255,0.12)'">Next ›</button>
-    </div>
+<!-- SEARCH OVERLAY -->
+<div class="ov ov-bg" id="sov">
+  <div style="display:flex;align-items:center;gap:1rem;margin-bottom:1rem">
+    <input class="s-input" id="sinp" placeholder="Search products, skin types..." oninput="doSearch(this.value)">
+    <span style="font-size:1.5rem;cursor:pointer" onclick="closeS()">&times;</span>
   </div>
+  <div class="s-results" id="sres"></div>
 </div>
 
-<!-- ===== VIDEO LIGHTBOX ===== -->
-<div class="video-lightbox" id="videoLightbox">
-  <div class="video-lightbox-inner">
-    <button class="video-lightbox-close" onclick="closeVideoLightbox()">×</button>
-    <video id="lightboxVideo" controls playsinline style="width:100%;border-radius:10px;display:block;max-height:80vh;">
-      <source id="lightboxVideoSrc" src="" type="video/mp4">
-    </video>
+<!-- CART OVERLAY -->
+<div class="ov ov-bg" id="cov">
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem">
+    <span style="font-weight:600;text-transform:uppercase;letter-spacing:.1em;font-size:14px">Your Cart</span>
+    <span style="font-size:1.5rem;cursor:pointer" onclick="closeC()">&times;</span>
+  </div>
+  <div id="citems" style="flex:1;overflow-y:auto"></div>
+  <div style="border-top:2px solid var(--bk);padding-top:1rem;margin-top:1rem">
+    <div style="display:flex;justify-content:space-between;font-weight:700;font-size:15px"><span>Total</span><span id="ctot">Ush 0</span></div>
+    <button class="btn-bk" style="width:100%;margin-top:.6rem;padding:12px" onclick="checkout()">Shop Now</button>
   </div>
 </div>
 
-<!-- ===== MOBILE OVERLAY ===== -->
-<div class="mobile-overlay" id="mobileOverlay" onclick="closeMobileMenu()"></div>
-<div class="mobile-panel" id="mobilePanel">
-  <button class="mobile-panel-close" onclick="closeMobileMenu()">×</button>
-  <div class="mobile-mode-row">
-    <button class="mobile-mode-btn" id="mobileFreeBtn" onclick="switchMode('freelancer'); closeMobileMenu()">Freelancer</button>
-    <button class="mobile-mode-btn" id="mobileBizBtn" onclick="switchMode('business'); closeMobileMenu()">Business</button>
+<!-- MENU OVERLAY -->
+<div class="ov ov-bg" id="mov">
+  <span style="position:absolute;top:1.2rem;right:1.2rem;font-size:1.8rem;cursor:pointer" onclick="closeM()">&times;</span>
+  <div class="mov-i" onclick="go('home');closeM()">Home</div>
+  <div class="mov-i" onclick="go('products');closeM()">Products</div>
+  <div class="mov-i" onclick="go('skintypes');closeM()">Skin Type</div>
+  <div class="mov-i" onclick="openS();closeM()">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
   </div>
-  <button class="mobile-panel-btn" onclick="showPage('products'); closeMobileMenu()">Products</button>
-  <button class="mobile-panel-btn" onclick="mobileGetAccess(); closeMobileMenu()">Get-Access</button>
-</div>
-
-<!-- ===== FREELANCER PAGE ===== -->
-<div class="page theme-dark active" id="page-freelancer">
-  <nav class="nav-dark">
-    <a class="nav-logo" onclick="showPage('freelancer')" style="cursor:pointer;">
-      <img src="https://models.valts.online/Rivela/l2.png" alt="Rivela AI-Studio" />
-    </a>
-    <div class="nav-center">
-      <button class="nav-products-btn glowing" onclick="showPage('products')" id="navProductsFreelancer" style="color:#fff;">PRODUCTS</button>
-    </div>
-    <div class="nav-right">
-      <div class="nav-mode-toggle">
-        <button class="mode-btn active-mode" id="desktopFreeBtn" style="color:#fff;" onclick="switchMode('freelancer')">Freelancer</button>
-        <span class="mode-separator" style="color:#fff;">/</span>
-        <button class="mode-btn glowing-mode" id="desktopBizBtn" style="color:#fff;" onclick="switchMode('business')">Business</button>
-      </div>
-      <button class="rocket-btn disabled-btn" id="navGetAccessFree" onclick="freeGetAccess()">
-        <div class="btn-outline"></div>
-        <div class="btn-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M12 2L12 22M12 2L6 8M12 2L18 8"/></svg></div>
-        <div class="btn-state btn-state-default">
-          <p><span style="--i:0">G</span><span style="--i:1">e</span><span style="--i:2">t</span><span style="--i:3">&nbsp;</span><span style="--i:4">A</span><span style="--i:5">c</span><span style="--i:6">c</span><span style="--i:7">e</span><span style="--i:8">s</span><span style="--i:9">s</span></p>
-        </div>
-        <div class="btn-state-sent">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5"><polyline points="20,6 9,17 4,12"/></svg>
-          <span style="--i:0">G</span><span style="--i:1">r</span><span style="--i:2">a</span><span style="--i:3">n</span><span style="--i:4">t</span><span style="--i:5">e</span><span style="--i:6">d</span>
-        </div>
-      </button>
-    </div>
-    <button class="mobile-menu-btn" onclick="openMobileMenu()" style="color:#fff;">
-      <span></span><span></span><span></span>
-    </button>
-  </nav>
-
-  <div class="page-inner">
-    <div class="msg-block fade-in fade-in-delay-1">
-      <h1>Your brand. Every setting.<br>That's AI identity.</h1>
-      <p>Mediocre content is the most expensive thing you own. It costs you customers every single day. Get a scalable, consistent pipeline all-through. Rivela AI-Studio handles the visuals. You focus on growth.</p>
-    </div>
-
-    <!-- MEDIA GRID -->
-    <div class="media-grid-wrap fade-in fade-in-delay-2">
-      <!-- Top circle video -->
-      <div class="top-circle-video" onclick="openVideoLightbox('https://models.valts.online/Rivela/y1.mp4')">
-        <video autoplay muted loop playsinline style="width:100%;height:100%;object-fit:cover;">
-          <source src="https://models.valts.online/Rivela/y1.mp4" type="video/mp4">
-        </video>
-        <div class="circle-video-hint">
-          <svg viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7z"/></svg>
-        </div>
-      </div>
-
-      <div class="media-grid" style="margin:0; padding-top: 55px;">
-      <!-- Top video boxes -->
-      <div class="video-box" id="videoBox1" onclick="openVideoLightbox('https://models.valts.online/Rivela/Post%201.mp4')" style="cursor:pointer;">
-        <video autoplay muted loop playsinline style="width:100%;height:100%;object-fit:cover;" id="vid1">
-          <source src="https://models.valts.online/Rivela/Post%201.mp4" type="video/mp4">
-        </video>
-        <div class="video-hand-hint">
-          <img src="https://models.valts.online/Rivela/hand.png" alt="" onerror="this.parentElement.innerHTML='<svg viewBox=&quot;0 0 40 40&quot; fill=&quot;none&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot; style=&quot;width:32px;height:32px;&quot;><path d=&quot;M20 8C20 6.9 19.1 6 18 6C16.9 6 16 6.9 16 8V20L14.5 18.2C13.9 17.5 12.9 17.4 12.2 17.9C11.5 18.5 11.4 19.5 11.9 20.2L16.5 26C17.4 27.2 18.7 28 20.2 28H22C24.8 28 27 25.8 27 23V17C27 15.9 26.1 15 25 15C24.4 15 23.9 15.3 23.5 15.7C23.2 14.7 22.2 14 21 14C20.4 14 19.9 14.2 19.5 14.6V8Z&quot; fill=&quot;white&quot; opacity=&quot;0.85&quot;/></svg>'"/>
-        </div>
-      </div>
-      <div class="video-box" id="videoBox2" onclick="openVideoLightbox('https://models.valts.online/Rivela/Post%202.mp4')" style="cursor:pointer;">
-        <video autoplay muted loop playsinline style="width:100%;height:100%;object-fit:cover;" id="vid2">
-          <source src="https://models.valts.online/Rivela/Post%202.mp4" type="video/mp4">
-        </video>
-        <div class="video-hand-hint">
-          <img src="https://models.valts.online/Rivela/hand.png" alt="" onerror="this.parentElement.innerHTML='<svg viewBox=&quot;0 0 40 40&quot; fill=&quot;none&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot; style=&quot;width:32px;height:32px;&quot;><path d=&quot;M20 8C20 6.9 19.1 6 18 6C16.9 6 16 6.9 16 8V20L14.5 18.2C13.9 17.5 12.9 17.4 12.2 17.9C11.5 18.5 11.4 19.5 11.9 20.2L16.5 26C17.4 27.2 18.7 28 20.2 28H22C24.8 28 27 25.8 27 23V17C27 15.9 26.1 15 25 15C24.4 15 23.9 15.3 23.5 15.7C23.2 14.7 22.2 14 21 14C20.4 14 19.9 14.2 19.5 14.6V8Z&quot; fill=&quot;white&quot; opacity=&quot;0.85&quot;/></svg>'"/>
-        </div>
-      </div>
-
-      <!-- Bottom row -->
-      <div class="media-bottom-row">
-        <!-- Left circle - female model -->
-        <div class="circle-block" id="circleLeftFree" onclick="openLightboxSingle('https://models.valts.online/Rivela/c1.png')">
-          <img src="https://models.valts.online/Rivela/c1.png" alt="AI Model" style="width:100%;height:100%;object-fit:cover;" />
-        </div>
-
-        <!-- Center carousel -->
-        <div class="carousel-box" id="carouselFree" style="position:relative;"></div>
-
-        <!-- Right circle - male model -->
-        <div class="circle-block" id="circleRightFree" onclick="openLightboxSingle('https://models.valts.online/Rivela/c2.png')">
-          <img src="https://models.valts.online/Rivela/c2.png" alt="AI Model" style="width:100%;height:100%;object-fit:cover;" />
-        </div>
-      </div>
-    </div>
-    </div><!-- end media-grid-wrap -->
-
-    <!-- Bottom circle video -->
-    <div class="bottom-circle-video-wrap fade-in fade-in-delay-3">
-      <div class="bottom-circle-video" onclick="openVideoLightbox('https://models.valts.online/Rivela/y2.mp4')">
-        <video autoplay muted loop playsinline style="width:100%;height:100%;object-fit:cover;">
-          <source src="https://models.valts.online/Rivela/y2.mp4" type="video/mp4">
-        </video>
-        <div class="circle-video-hint">
-          <svg viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7z"/></svg>
-        </div>
-      </div>
-    </div>
-
-    <!-- Bottom message -->
-    <div class="msg-block msg-bottom fade-in fade-in-delay-3">
-      <h1>Start owning attention with AI visuals built to sell.</h1>
-      <p>From AI Winner Pack creatives to full AI Brand Builder — Rivela gives your business the visuals that stop the scroll and win the sale. Consistent models, ad-ready content, premium at every level.</p>
-    </div>
-
-    <div class="project-access-group fade-in fade-in-delay-4">
-      <button class="rocket-btn" onclick="showPage('project-info-free')">
-        <div class="btn-outline"></div>
-        <div class="btn-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M12 2L12 22M12 2L6 8M12 2L18 8"/></svg></div>
-        <div class="btn-state btn-state-default">
-          <p><span style="--i:0">S</span><span style="--i:1">t</span><span style="--i:2">a</span><span style="--i:3">r</span><span style="--i:4">t</span><span style="--i:5">&nbsp;</span><span style="--i:6">P</span><span style="--i:7">r</span><span style="--i:8">o</span><span style="--i:9">j</span><span style="--i:10">e</span><span style="--i:11">c</span><span style="--i:12">t</span></p>
-        </div>
-        <div class="btn-state-sent">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5"><polyline points="20,6 9,17 4,12"/></svg>
-          <span style="--i:0">D</span><span style="--i:1">o</span><span style="--i:2">n</span><span style="--i:3">e</span>
-        </div>
-      </button>
-      <div class="project-line"></div>
-      <button class="rocket-btn disabled-btn" id="getAccessFreeBtn" onclick="freeGetAccess()">
-        <div class="btn-outline"></div>
-        <div class="btn-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M12 2L12 22M12 2L6 8M12 2L18 8"/></svg></div>
-        <div class="btn-state btn-state-default">
-          <p><span style="--i:0">G</span><span style="--i:1">e</span><span style="--i:2">t</span><span style="--i:3">&nbsp;</span><span style="--i:4">A</span><span style="--i:5">c</span><span style="--i:6">c</span><span style="--i:7">e</span><span style="--i:8">s</span><span style="--i:9">s</span></p>
-        </div>
-        <div class="btn-state-sent">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5"><polyline points="20,6 9,17 4,12"/></svg>
-          <span style="--i:0">G</span><span style="--i:1">r</span><span style="--i:2">a</span><span style="--i:3">n</span><span style="--i:4">t</span><span style="--i:5">e</span><span style="--i:6">d</span>
-        </div>
-      </button>
-    </div>
-
-    <div class="page-footer fade-in fade-in-delay-5">
-      <div class="social-icons">
-        <a href="https://www.instagram.com/rivelaaistudio" target="_blank" class="social-icon-link" style="color:#fff; border-color:rgba(255,255,255,0.15);">
-          <svg viewBox="0 0 24 24"><path d="M7.8,2H16.2C19.4,2 22,4.6 22,7.8V16.2A5.8,5.8 0 0,1 16.2,22H7.8C4.6,22 2,19.4 2,16.2V7.8A5.8,5.8 0 0,1 7.8,2M7.6,4A3.6,3.6 0 0,0 4,7.6V16.4C4,18.39 5.61,20 7.6,20H16.4A3.6,3.6 0 0,0 20,16.4V7.6C20,5.61 18.39,4 16.4,4H7.6M17.25,5.5A1.25,1.25 0 0,1 18.5,6.75A1.25,1.25 0 0,1 17.25,8A1.25,1.25 0 0,1 16,6.75A1.25,1.25 0 0,1 17.25,5.5M12,7A5,5 0 0,1 17,12A5,5 0 0,1 12,17A5,5 0 0,1 7,12A5,5 0 0,1 12,7M12,9A3,3 0 0,0 9,12A3,3 0 0,0 12,15A3,3 0 0,0 15,12A3,3 0 0,0 12,9Z"/></svg>
-        </a>
-        <a href="https://www.tiktok.com/@rivela.aistudio" target="_blank" class="social-icon-link" style="color:#fff; border-color:rgba(255,255,255,0.15);">
-          <svg viewBox="0 0 24 24"><path d="M16.6,5.82s.51.5,0,0A4.278,4.278 0 0,0 15.54,3h-3.09V12.4a2.592,2.592 0 0,1-2.59,2.5c-1.42,0-2.6-1.16-2.6-2.6c0-1.72,1.66-3.01,3.37-2.48V6.66c-3.45-.46-6.47,2.22-6.47,5.64c0,3.33,2.76,5.7,5.69,5.7c3.14,0,5.69-2.55,5.69-5.7V9.01a7.35,7.35 0 0,0 4.3,1.38V7.3s-1.88.09-3.24-1.48Z"/></svg>
-        </a>
-        <a href="https://wa.me/256770892824?text=Hey%20Rivela%2C%20I%27m%20interested%20in%20AI%20creatives%20for%20my%20brand" target="_blank" class="social-icon-link" style="color:#fff; border-color:rgba(255,255,255,0.15);">
-          <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
-        </a>
-      </div>
-      <div class="footer-logo" style="color:#fff;">RIVELA AI-STUDIO</div>
-    </div>
+  <div class="mov-i" onclick="openC();closeM()">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
   </div>
 </div>
 
-<!-- ===== FREELANCER PROJECT INFO PAGE ===== -->
-<div class="page theme-dark" id="page-project-info-free">
-  <nav class="nav-dark">
-    <a class="nav-logo" onclick="showPage('freelancer')" style="cursor:pointer;">
-      <img src="https://models.valts.online/Rivela/l2.png" alt="Rivela AI-Studio" />
-    </a>
-    <div class="nav-right">
-      <button class="mode-btn" onclick="showPage('freelancer')" style="color:#fff; opacity:0.5;">← Back</button>
+<!-- SVG ICONS TEMPLATE -->
+<template id="ico-search"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></template>
+<template id="ico-cart"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg></template>
+<template id="ico-ig"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5"/></svg></template>
+<template id="ico-tt"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/></svg></template>
+<template id="ico-wa"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg></template>
+
+<!-- ========== HELPER: STANDARD NAV (HOME / PRODUCTS / SKINTYPES) ========== -->
+<template id="tpl-stdnav">
+<div style="position:sticky;top:0;z-index:100;background:var(--pw);border-bottom:1px solid var(--gee)">
+  <div class="container">
+    <!-- DESKTOP NAV -->
+    <div class="dnav" style="padding:10px 0">
+      <div style="cursor:pointer" data-nav="logo"><img src="https://models.valts.online/celara/wlogo.png" alt="Celara" style="height:28px;object-fit:contain"></div>
+      <div data-nav="oval"></div>
+      <div style="display:flex;align-items:center;gap:10px">
+        <span data-nav="search" style="cursor:pointer"></span>
+        <span data-nav="cartbtn" style="cursor:pointer;position:relative"></span>
+        <button class="btn-bk" data-nav="shopnow" style="padding:6px 16px;font-size:10px">Shop Now</button>
+      </div>
     </div>
-    <button class="mobile-menu-btn" onclick="openMobileMenu()" style="color:#fff;"><span></span><span></span><span></span></button>
-  </nav>
-  <div class="page-inner">
-    <button class="back-btn" onclick="showPage('freelancer')" style="color:#fff;">← Back</button>
-    <div class="form-container">
-      <div style="margin-bottom:2.5rem;">
-        <h1 style="font-family:var(--cinzel);font-size:clamp(1.4rem,3vw,2rem);font-weight:400;letter-spacing:0.08em;margin-bottom:0.7rem;color:#fff;">Project Inquiry</h1>
-        <p style="font-size:1.05rem;opacity:0.5;font-weight:300;line-height:1.7;color:#fff;">Tell us about your project and we'll get back to you.</p>
-      </div>
-
-      <div class="form-field fade-in">
-        <label class="form-label" style="color:rgba(255,255,255,0.6);">Full Names <span class="required">*</span></label>
-        <input type="text" class="form-input free-input" id="ffi-name" placeholder="Your full name" />
-      </div>
-
-      <div class="form-field fade-in fade-in-delay-1">
-        <label class="form-label" style="color:rgba(255,255,255,0.6);">Phone Number or Email <span class="required">*</span></label>
-        <input type="text" class="form-input free-input" id="ffi-contact" placeholder="+256 or email@brand.com" />
-      </div>
-
-      <div class="form-field fade-in fade-in-delay-2">
-        <label class="form-label" style="color:rgba(255,255,255,0.6);">Your Role or Need <span class="required">*</span></label>
-        <p style="font-size:0.85rem;opacity:0.4;margin-bottom:0.5rem;color:#fff;">What exactly do you do or why Rivela?</p>
-        <input type="text" class="form-input free-input" id="ffi-role" placeholder="Eg Business, artist, learn, etc" />
-      </div>
-
-      <div class="form-field fade-in fade-in-delay-2">
-        <label class="form-label" style="color:rgba(255,255,255,0.6);">Project Type <span class="required">*</span> <span style="opacity:0.4;font-size:0.7rem;">Pick what applies.</span></label>
-        <div class="chips-grid" id="freeProjectTypeChips">
-          <button class="chip free-chip" onclick="toggleFreeChip(this)">AI Product Photos</button>
-          <button class="chip free-chip" onclick="toggleFreeChip(this)">Social Ads (Short-form video)</button>
-          <button class="chip free-chip" onclick="toggleFreeChip(this)">Brand Identity</button>
-          <button class="chip free-chip" onclick="toggleFreeChip(this)">AI Model Identity</button>
-          <button class="chip free-chip" onclick="toggleFreeChip(this)">AI Winner Pack</button>
-          <button class="chip free-chip" onclick="toggleFreeChip(this)">AI Brand Builder</button>
-          <button class="chip free-chip" onclick="toggleFreeChip(this)">Content System</button>
-          <button class="chip free-chip" onclick="toggleFreeChip(this)">Motion Design</button>
-          <button class="chip free-chip" onclick="toggleFreeChip(this)">Learn</button>
-          <button class="chip free-chip" onclick="toggleFreeChip(this)">Other</button>
+    <!-- PHONE NAV -->
+    <div class="mnav" style="flex-direction:column">
+      <div class="mnav-row1">
+        <div style="cursor:pointer" data-nav="logo"><img src="https://models.valts.online/celara/wlogo.png" alt="Celara" style="height:26px;object-fit:contain"></div>
+        <div style="display:flex;align-items:center;gap:10px">
+          <span data-nav="search" style="cursor:pointer"></span>
+          <span data-nav="cartbtn" style="cursor:pointer;position:relative"></span>
         </div>
       </div>
-
-      <div class="form-field fade-in fade-in-delay-3">
-        <label class="form-label" style="color:rgba(255,255,255,0.6);">Project Description / Purpose <span class="required">*</span></label>
-        <p style="font-size:0.85rem;opacity:0.4;margin-bottom:0.5rem;color:#fff;">One short paragraph with scope and goal.</p>
-        <textarea class="form-textarea free-input" id="ffi-desc" placeholder="Describe your project..."></textarea>
-      </div>
-
-      <div class="form-field fade-in fade-in-delay-3">
-        <label class="form-label" style="color:rgba(255,255,255,0.6);">Budget Range (UGX–USD) <span class="required">*</span></label>
-        <p style="font-size:0.85rem;opacity:0.4;margin-bottom:0.5rem;color:#fff;">Input your estimated budget for AI creativity per month.</p>
-        <input type="text" class="form-input free-input" id="ffi-budget" placeholder="e.g. UGX 100,000 / month" />
-      </div>
-
-      <div class="form-field fade-in fade-in-delay-4">
-        <label class="form-label" style="color:rgba(255,255,255,0.6);">Looking for a retainer? <span class="required">*</span></label>
-        <div class="retainer-btns">
-          <button class="retainer-btn free-retainer-btn" onclick="selectFreeRetainer(this, 'Yes')">Yes</button>
-          <button class="retainer-btn free-retainer-btn" onclick="selectFreeRetainer(this, 'No')">No</button>
-          <button class="retainer-btn free-retainer-btn" onclick="selectFreeRetainer(this, 'Maybe')">Maybe</button>
-        </div>
-      </div>
-
-      <div class="form-field fade-in fade-in-delay-4">
-        <label class="form-label" style="color:rgba(255,255,255,0.6);">Current Brand Assets <span style="opacity:0.4;">(Optional)</span></label>
-        <p style="font-size:0.85rem;opacity:0.4;margin-bottom:0.5rem;color:#fff;">Name all/any if you have</p>
-        <input type="text" class="form-input free-input" id="ffi-assets" placeholder="Logo, model, brand references etc" />
-      </div>
-
-      <div class="form-field fade-in fade-in-delay-5">
-        <label class="form-label" style="color:rgba(255,255,255,0.6);">Anything Else? <span style="opacity:0.4;">(Optional)</span></label>
-        <textarea class="form-textarea free-input" id="ffi-extra" placeholder="References, inspirations, constraints..."></textarea>
-      </div>
-
-      <div class="form-submit-area fade-in fade-in-delay-5">
-        <button class="rocket-btn" onclick="submitFreeInquiry()" style="min-width:220px;">
-          <div class="btn-outline"></div>
-          <div class="btn-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M12 2L12 22M12 2L6 8M12 2L18 8"/></svg></div>
-          <div class="btn-state btn-state-default"><p>
-            <span style="--i:0">S</span><span style="--i:1">u</span><span style="--i:2">b</span><span style="--i:3">m</span><span style="--i:4">i</span><span style="--i:5">t</span>
-            <span style="--i:6">&nbsp;</span>
-            <span style="--i:7">I</span><span style="--i:8">n</span><span style="--i:9">q</span><span style="--i:10">u</span><span style="--i:11">i</span><span style="--i:12">r</span><span style="--i:13">y</span>
-          </p></div>
-          <div class="btn-state-sent">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5"><polyline points="20,6 9,17 4,12"/></svg>
-            <span style="--i:0">S</span><span style="--i:1">e</span><span style="--i:2">n</span><span style="--i:3">t</span>
-          </div>
-        </button>
+      <div class="mnav-row2">
+        <div data-nav="oval" style="width:100%"></div>
       </div>
     </div>
   </div>
 </div>
+</template>
 
-<!-- ===== BUSINESS PAGE ===== -->
-<div class="page theme-light" id="page-business">
-  <nav class="nav-light">
-    <a class="nav-logo" onclick="showPage('business')" style="cursor:pointer;">
-      <img src="https://models.valts.online/Rivela/l1.png" alt="Rivela AI-Studio" />
-    </a>
-    <div class="nav-center">
-      <button class="nav-products-btn glowing-light" onclick="showPage('products')" id="navProductsBusiness">PRODUCTS</button>
+<!-- ====================== PAGE: HOME ====================== -->
+<div class="page active" id="pg-home">
+
+<!-- NAV -->
+<div style="position:sticky;top:0;z-index:100;background:var(--pw);border-bottom:1px solid var(--gee)">
+<div class="container">
+<div class="dnav" style="padding:10px 0">
+  <div style="cursor:pointer" onclick="go('home')"><img src="https://models.valts.online/celara/wlogo.png" alt="Celara" style="height:28px;object-fit:contain"></div>
+  <div class="noval" id="h-oval"><div class="noval-s" id="h-oval-s"></div><div class="noval-i on" onclick="go('home')">Home</div><div class="noval-i" onclick="go('products')">Products</div><div class="noval-i" onclick="go('skintypes')">Skin Type</div></div>
+  <div style="display:flex;align-items:center;gap:10px">
+    <span onclick="openS()" style="cursor:pointer"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></span>
+    <span onclick="openC()" style="cursor:pointer;position:relative"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg><span class="cbadge" style="position:absolute;top:-5px;right:-7px;background:var(--bk);color:var(--w);font-size:8px;width:14px;height:14px;border-radius:50%;display:none;align-items:center;justify-content:center;font-weight:700">0</span></span>
+    <button class="btn-bk" onclick="openC()" style="padding:6px 14px;font-size:10px">Shop Now</button>
+  </div>
+</div>
+<div class="mnav" style="flex-direction:column">
+  <div class="mnav-row1">
+    <div style="cursor:pointer" onclick="go('home')"><img src="https://models.valts.online/celara/wlogo.png" alt="Celara" style="height:26px;object-fit:contain"></div>
+    <div style="display:flex;align-items:center;gap:10px">
+      <span onclick="openS()" style="cursor:pointer"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></span>
+      <span onclick="openC()" style="cursor:pointer;position:relative"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg><span class="cbadge" style="position:absolute;top:-5px;right:-7px;background:var(--bk);color:var(--w);font-size:8px;width:14px;height:14px;border-radius:50%;display:none;align-items:center;justify-content:center;font-weight:700">0</span></span>
     </div>
-    <div class="nav-right">
-      <div class="nav-mode-toggle">
-        <button class="mode-btn glowing-mode-light" onclick="switchMode('freelancer')" style="color:#000;">Freelancer</button>
-        <span class="mode-separator">/</span>
-        <button class="mode-btn active-mode" onclick="switchMode('business')" style="color:#000;">Business</button>
-      </div>
-      <button class="rocket-btn disabled-btn" id="navGetAccessBiz" onclick="bizGetAccess()">
-        <div class="btn-outline"></div>
-        <div class="btn-icon">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M12 2L12 22M12 2L6 8M12 2L18 8"/></svg>
-        </div>
-        <div class="btn-state btn-state-default">
-          <p><span style="--i:0">G</span><span style="--i:1">e</span><span style="--i:2">t</span><span style="--i:3">&nbsp;</span><span style="--i:4">A</span><span style="--i:5">c</span><span style="--i:6">c</span><span style="--i:7">e</span><span style="--i:8">s</span><span style="--i:9">s</span></p>
-        </div>
-        <div class="btn-state-sent">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5"><polyline points="20,6 9,17 4,12"/></svg>
-          <span style="--i:0">G</span><span style="--i:1">r</span><span style="--i:2">a</span><span style="--i:3">n</span><span style="--i:4">t</span><span style="--i:5">e</span><span style="--i:6">d</span>
-        </div>
-      </button>
+  </div>
+  <div class="mnav-row2">
+    <div class="noval" id="h-oval-m" style="width:100%"><div class="noval-s" id="h-oval-m-s"></div><div class="noval-i on" onclick="go('home')" style="flex:1;text-align:center">Home</div><div class="noval-i" onclick="go('products')" style="flex:1;text-align:center">Products</div><div class="noval-i" onclick="go('skintypes')" style="flex:1;text-align:center">Skin Type</div></div>
+  </div>
+</div>
+</div>
+</div>
+
+<!-- HERO -->
+<section style="width:100%;position:relative">
+  <img src="https://models.valts.online/celara/p1.png" alt="Celara Skincare" style="width:100%;aspect-ratio:16/7;object-fit:cover">
+  <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center">
+    <span style="font-family:var(--fserif);font-weight:300;letter-spacing:.35em;color:#fff;text-shadow:0 2px 30px rgba(0,0,0,.5);font-size:clamp(1.2rem,4vw,2.6rem)">BEAUTY. CARE. CONFIDENCE.</span>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="mw"><div class="mt-track"><span>OPEN FROM: 8AM-5PM</span><span>SAME DAY DELIVERY</span><span>WHATSAPP US ON 0770892824</span><span>OPEN FROM: 8AM-5PM</span><span>SAME DAY DELIVERY</span><span>WHATSAPP US ON 0770892824</span></div></div>
+
+<!-- SALES -->
+<section class="container" style="margin-top:2rem;text-align:center;max-width:680px">
+  <p style="font-size:13px;font-weight:300;line-height:1.9;color:var(--g55)">Celara brings nature's purest ingredients to your skin for visible transformation and lasting radiance.<br>Crafted from nature's finest botanicals, delivering maximum results — restoring, healing, and elevating your skin.</p>
+  <div style="margin-top:1.5rem;text-align:left;max-width:480px;margin-left:auto;margin-right:auto">
+    <p style="font-weight:600;font-size:13px;margin-bottom:.6rem">Where do you want to begin?</p>
+    <p style="font-size:11px;color:var(--g55);line-height:1.8">1. Know your skin type? Bundle our products and build your perfect routine.<br>2. Need maximum healing and transformation? Choose your skin type below</p>
+  </div>
+</section>
+
+<!-- 2 BOXES -->
+<section class="container" style="margin-top:2rem">
+  <div class="h2box">
+    <div style="position:relative;border-radius:10px;overflow:hidden;cursor:pointer;aspect-ratio:4/3" onclick="go('products')">
+      <img src="https://models.valts.online/celara/h2.png" alt="All our 8 products" style="width:100%;height:100%;object-fit:cover">
+      <div style="position:absolute;bottom:0;left:0;right:0;background:rgba(0,0,0,.6);color:#fff;padding:10px;font-size:12px;font-weight:600;letter-spacing:.06em;text-align:center">All our 8 products</div>
     </div>
-    <button class="mobile-menu-btn light-mode-menu" onclick="openMobileMenu()" style="color:#000;">
-      <span></span><span></span><span></span>
-    </button>
-  </nav>
-
-  <div class="page-inner">
-    <div class="msg-block fade-in fade-in-delay-1">
-      <h1>Your brand deserves<br>the 1% visual.</h1>
-      <p>Rivela AI-Studio builds AI creatives for brands that refuse to be ignored. Premium images, consistent models, ad-ready videos — everything your business needs to stop the scroll and convert.</p>
+    <div style="position:relative;border-radius:10px;overflow:hidden;cursor:pointer;aspect-ratio:4/3" onclick="go('skintypes')">
+      <img src="https://models.valts.online/celara/h3.png" alt="Your Skin Type" style="width:100%;height:100%;object-fit:cover">
+      <div style="position:absolute;bottom:0;left:0;right:0;background:rgba(0,0,0,.6);color:#fff;padding:10px;font-size:12px;font-weight:600;letter-spacing:.06em;text-align:center">Your Skin Type</div>
     </div>
+  </div>
+</section>
 
-    <!-- MEDIA GRID (Business) -->
-    <div class="media-grid-wrap fade-in fade-in-delay-2">
-      <!-- Top circle video (light theme) -->
-      <div class="top-circle-video light-circle" onclick="openVideoLightbox('https://models.valts.online/Rivela/y1.mp4')">
-        <video autoplay muted loop playsinline style="width:100%;height:100%;object-fit:cover;">
-          <source src="https://models.valts.online/Rivela/y1.mp4" type="video/mp4">
-        </video>
-        <div class="circle-video-hint">
-          <svg viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7z"/></svg>
-        </div>
-      </div>
+<!-- CLOSING -->
+<section class="container" style="margin-top:2rem;text-align:center">
+  <p style="font-family:var(--fserif);font-size:20px;font-weight:500;letter-spacing:.12em">Confidence comes from results.</p>
+</section>
 
-      <div class="media-grid" style="margin:0; padding-top: 55px;">
-      <div class="video-box" style="background:#1a1a1a;" id="videoBoxBiz1" onclick="openVideoLightbox('https://models.valts.online/Rivela/Post%201.mp4')" style="cursor:pointer;">
-        <video autoplay muted loop playsinline style="width:100%;height:100%;object-fit:cover;">
-          <source src="https://models.valts.online/Rivela/Post%201.mp4" type="video/mp4">
-        </video>
-        <div class="video-hand-hint">
-          <img src="https://models.valts.online/Rivela/hand.png" alt="" onerror="this.parentElement.innerHTML='<svg viewBox=&quot;0 0 40 40&quot; fill=&quot;none&quot; style=&quot;width:32px;height:32px;&quot;><path d=&quot;M20 8C20 6.9 19.1 6 18 6C16.9 6 16 6.9 16 8V20L14.5 18.2C13.9 17.5 12.9 17.4 12.2 17.9C11.5 18.5 11.4 19.5 11.9 20.2L16.5 26C17.4 27.2 18.7 28 20.2 28H22C24.8 28 27 25.8 27 23V17C27 15.9 26.1 15 25 15C24.4 15 23.9 15.3 23.5 15.7C23.2 14.7 22.2 14 21 14C20.4 14 19.9 14.2 19.5 14.6V8Z&quot; fill=&quot;white&quot; opacity=&quot;0.85&quot;/></svg>'"/>
-        </div>
-      </div>
-      <div class="video-box" style="background:#1a1a1a;" id="videoBoxBiz2" onclick="openVideoLightbox('https://models.valts.online/Rivela/Post%202.mp4')" style="cursor:pointer;">
-        <video autoplay muted loop playsinline style="width:100%;height:100%;object-fit:cover;">
-          <source src="https://models.valts.online/Rivela/Post%202.mp4" type="video/mp4">
-        </video>
-        <div class="video-hand-hint">
-          <img src="https://models.valts.online/Rivela/hand.png" alt="" onerror="this.parentElement.innerHTML='<svg viewBox=&quot;0 0 40 40&quot; fill=&quot;none&quot; style=&quot;width:32px;height:32px;&quot;><path d=&quot;M20 8C20 6.9 19.1 6 18 6C16.9 6 16 6.9 16 8V20L14.5 18.2C13.9 17.5 12.9 17.4 12.2 17.9C11.5 18.5 11.4 19.5 11.9 20.2L16.5 26C17.4 27.2 18.7 28 20.2 28H22C24.8 28 27 25.8 27 23V17C27 15.9 26.1 15 25 15C24.4 15 23.9 15.3 23.5 15.7C23.2 14.7 22.2 14 21 14C20.4 14 19.9 14.2 19.5 14.6V8Z&quot; fill=&quot;white&quot; opacity=&quot;0.85&quot;/></svg>'"/>
-        </div>
-      </div>
-      <div class="media-bottom-row">
-        <!-- Left circle carousel - products -->
-        <div class="circle-block" id="circleLeftBiz" style="background:#1a1a1a; overflow:hidden; position:relative;" onclick="openCircleCarousel('products', circleCarousels.products.current)">
-          <img id="circleLeftBizImg" src="https://models.valts.online/Rivela/p1.png" alt="Product" style="width:100%;height:100%;object-fit:cover;" />
-          <button class="circle-prev" onclick="event.stopPropagation(); circleCarouselPrev('products')">‹</button>
-          <button class="circle-next" onclick="event.stopPropagation(); circleCarouselNext('products')">›</button>
-        </div>
+<!-- BEFORE/AFTER -->
+<section class="container" style="margin-top:1.5rem">
+  <div class="ba-wrap" id="h-ba">
+    <div class="ba-side" onclick="openLB(document.getElementById('h-bb').src)"><img id="h-bb" src="https://models.valts.online/celara/bb1.png" alt="Before"><div class="ba-lbl">Before</div></div>
+    <div class="ba-side" onclick="openLB(document.getElementById('h-ba').src)"><img id="h-ba" src="https://models.valts.online/celara/ba1.png" alt="After"><div class="ba-lbl">After</div></div>
+  </div>
+</section>
 
-        <!-- Center main carousel -->
-        <div class="carousel-box" id="carouselBiz" style="background:#1a1a1a; position:relative;"></div>
+<!-- END TEXT -->
+<section class="container" style="margin-top:1.5rem;text-align:center">
+  <p style="font-weight:600;font-size:13px">You can be next.</p>
+  <p style="font-size:10px;color:var(--g99);margin-top:4px">Copyright &copy; 2026 CELARA SKINCARE. All Rights Reserved.</p>
+</section>
 
-        <!-- Right circle carousel - avatars -->
-        <div class="circle-block" id="circleRightBiz" style="background:#1a1a1a; overflow:hidden; position:relative;" onclick="openCircleCarousel('avatars', circleCarousels.avatars.current)">
-          <img id="circleRightBizImg" src="https://models.valts.online/Rivela/a1.png" alt="Avatar" style="width:100%;height:100%;object-fit:cover;" />
-          <button class="circle-prev" onclick="event.stopPropagation(); circleCarouselPrev('avatars')">‹</button>
-          <button class="circle-next" onclick="event.stopPropagation(); circleCarouselNext('avatars')">›</button>
-        </div>
-      </div>
+<!-- FOOTER -->
+<footer style="margin-top:auto;border-top:1px solid var(--gee);padding:14px 0">
+<div class="container">
+  <div class="ftr-desktop">
+    <div><img src="https://models.valts.online/celara/clogo.png" alt="Celara" style="height:24px;object-fit:contain"></div>
+    <div style="display:flex;gap:14px;align-items:center">
+      <a href="https://instagram.com/celaraskincare" target="_blank"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5"/></svg></a>
+      <a href="https://tiktok.com/@celaraskincare" target="_blank"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/></svg></a>
+      <a href="https://wa.me/256770892824" target="_blank"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg></a>
     </div>
-    </div><!-- end media-grid-wrap -->
-
-    <!-- Bottom circle video -->
-    <div class="bottom-circle-video-wrap fade-in fade-in-delay-3">
-      <div class="bottom-circle-video light-circle" onclick="openVideoLightbox('https://models.valts.online/Rivela/y2.mp4')">
-        <video autoplay muted loop playsinline style="width:100%;height:100%;object-fit:cover;">
-          <source src="https://models.valts.online/Rivela/y2.mp4" type="video/mp4">
-        </video>
-        <div class="circle-video-hint">
-          <svg viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7z"/></svg>
-        </div>
-      </div>
+    <div style="font-size:10px;letter-spacing:.12em;font-weight:500">Beauty.Care.Confidence</div>
+  </div>
+  <div class="ftr-phone">
+    <div style="display:flex;gap:16px;align-items:center">
+      <a href="https://instagram.com/celaraskincare" target="_blank"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5"/></svg></a>
+      <a href="https://tiktok.com/@celaraskincare" target="_blank"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/></svg></a>
+      <a href="https://wa.me/256770892824" target="_blank"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg></a>
     </div>
-
-    <div class="msg-block msg-bottom fade-in fade-in-delay-3">
-      <h1>Anything can be marketed.</h1>
-      <p>From a single AI Winner Pack to a full month of AI Brand Builder — Rivela works hand-in-hand with your brand until results show. Start with creatives. Scale with a system.</p>
-    </div>
-
-    <!-- Project info + Get Access group -->
-    <div class="project-access-group fade-in fade-in-delay-4">
-      <button class="rocket-btn" onclick="showPage('project-info')" id="projectInfoBtnBiz">
-        <div class="btn-outline"></div>
-        <div class="btn-icon">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M12 2L12 22M12 2L6 8M12 2L18 8"/></svg>
-        </div>
-        <div class="btn-state btn-state-default">
-          <p><span style="--i:0">P</span><span style="--i:1">r</span><span style="--i:2">o</span><span style="--i:3">j</span><span style="--i:4">e</span><span style="--i:5">c</span><span style="--i:6">t</span><span style="--i:7">&nbsp;</span><span style="--i:8">I</span><span style="--i:9">n</span><span style="--i:10">f</span><span style="--i:11">o</span></p>
-        </div>
-        <div class="btn-state-sent">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5"><polyline points="20,6 9,17 4,12"/></svg>
-          <span style="--i:0">D</span><span style="--i:1">o</span><span style="--i:2">n</span><span style="--i:3">e</span>
-        </div>
-      </button>
-      <div class="project-line"></div>
-      <button class="rocket-btn disabled-btn" id="getAccessBizBtn" onclick="bizGetAccess()">
-        <div class="btn-outline"></div>
-        <div class="btn-icon">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M12 2L12 22M12 2L6 8M12 2L18 8"/></svg>
-        </div>
-        <div class="btn-state btn-state-default">
-          <p><span style="--i:0">G</span><span style="--i:1">e</span><span style="--i:2">t</span><span style="--i:3">&nbsp;</span><span style="--i:4">A</span><span style="--i:5">c</span><span style="--i:6">c</span><span style="--i:7">e</span><span style="--i:8">s</span><span style="--i:9">s</span></p>
-        </div>
-        <div class="btn-state-sent">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5"><polyline points="20,6 9,17 4,12"/></svg>
-          <span style="--i:0">G</span><span style="--i:1">r</span><span style="--i:2">a</span><span style="--i:3">n</span><span style="--i:4">t</span><span style="--i:5">e</span><span style="--i:6">d</span>
-        </div>
-      </button>
-    </div>
-
-    <div class="page-footer fade-in fade-in-delay-5">
-      <div class="social-icons">
-        <a href="https://www.instagram.com/rivelaaistudio" target="_blank" class="social-icon-link">
-          <svg viewBox="0 0 24 24"><path d="M7.8,2H16.2C19.4,2 22,4.6 22,7.8V16.2A5.8,5.8 0 0,1 16.2,22H7.8C4.6,22 2,19.4 2,16.2V7.8A5.8,5.8 0 0,1 7.8,2M7.6,4A3.6,3.6 0 0,0 4,7.6V16.4C4,18.39 5.61,20 7.6,20H16.4A3.6,3.6 0 0,0 20,16.4V7.6C20,5.61 18.39,4 16.4,4H7.6M17.25,5.5A1.25,1.25 0 0,1 18.5,6.75A1.25,1.25 0 0,1 17.25,8A1.25,1.25 0 0,1 16,6.75A1.25,1.25 0 0,1 17.25,5.5M12,7A5,5 0 0,1 17,12A5,5 0 0,1 12,17A5,5 0 0,1 7,12A5,5 0 0,1 12,7M12,9A3,3 0 0,0 9,12A3,3 0 0,0 12,15A3,3 0 0,0 15,12A3,3 0 0,0 12,9Z"/></svg>
-        </a>
-        <a href="https://www.tiktok.com/@rivela.aistudio" target="_blank" class="social-icon-link">
-          <svg viewBox="0 0 24 24"><path d="M16.6,5.82s.51.5,0,0A4.278,4.278 0 0,0 15.54,3h-3.09V12.4a2.592,2.592 0 0,1-2.59,2.5c-1.42,0-2.6-1.16-2.6-2.6c0-1.72,1.66-3.01,3.37-2.48V6.66c-3.45-.46-6.47,2.22-6.47,5.64c0,3.33,2.76,5.7,5.69,5.7c3.14,0,5.69-2.55,5.69-5.7V9.01a7.35,7.35 0 0,0 4.3,1.38V7.3s-1.88.09-3.24-1.48Z"/></svg>
-        </a>
-        <a href="https://wa.me/256770892824?text=Hey%20Rivela%2C%20I%27m%20interested%20in%20AI%20creatives%20for%20my%20brand" target="_blank" class="social-icon-link">
-          <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
-        </a>
-      </div>
-      <div class="footer-logo">RIVELA AI-STUDIO</div>
+    <div style="display:flex;align-items:center;gap:16px">
+      <img src="https://models.valts.online/celara/clogo.png" alt="Celara" style="height:22px;object-fit:contain">
+      <span style="font-size:10px;letter-spacing:.12em;font-weight:500">Beauty.Care.Confidence</span>
     </div>
   </div>
 </div>
+</footer>
+</div>
 
-<!-- ===== PRODUCTS PAGE ===== -->
-<div class="page theme-light" id="page-products">
-  <nav class="nav-light">
-    <a class="nav-logo" onclick="showPage(lastMode)" style="cursor:pointer;">
-      <img src="https://models.valts.online/Rivela/l1.png" alt="Rivela AI-Studio" />
-    </a>
-    <div class="nav-center">
-      <button class="nav-products-btn" onclick="showPage('products')" style="font-weight:700; opacity:1;">PRODUCTS</button>
+<!-- ====================== PAGE: PRODUCTS ====================== -->
+<div class="page" id="pg-products">
+<!-- NAV -->
+<div style="position:sticky;top:0;z-index:100;background:var(--pw);border-bottom:1px solid var(--gee)">
+<div class="container">
+<div class="dnav" style="padding:10px 0">
+  <div style="cursor:pointer" onclick="go('home')"><img src="https://models.valts.online/celara/wlogo.png" alt="Celara" style="height:28px;object-fit:contain"></div>
+  <div class="noval" id="p-oval"><div class="noval-s" id="p-oval-s"></div><div class="noval-i" onclick="go('home')">Home</div><div class="noval-i on" onclick="go('products')">Products</div><div class="noval-i" onclick="go('skintypes')">Skin Type</div></div>
+  <div style="display:flex;align-items:center;gap:10px">
+    <span onclick="openS()" style="cursor:pointer"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></span>
+    <span onclick="openC()" style="cursor:pointer;position:relative"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg><span class="cbadge" style="position:absolute;top:-5px;right:-7px;background:var(--bk);color:var(--w);font-size:8px;width:14px;height:14px;border-radius:50%;display:none;align-items:center;justify-content:center;font-weight:700">0</span></span>
+    <button class="btn-bk" onclick="openC()" style="padding:6px 14px;font-size:10px">Shop Now</button>
+  </div>
+</div>
+<div class="mnav" style="flex-direction:column">
+  <div class="mnav-row1">
+    <div style="cursor:pointer" onclick="go('home')"><img src="https://models.valts.online/celara/wlogo.png" alt="Celara" style="height:26px;object-fit:contain"></div>
+    <div style="display:flex;align-items:center;gap:10px">
+      <span onclick="openS()" style="cursor:pointer"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></span>
+      <span onclick="openC()" style="cursor:pointer;position:relative"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg></span>
     </div>
-    <div class="nav-right">
-      <div class="nav-mode-toggle">
-        <button class="mode-btn" onclick="switchMode('freelancer')" style="color:#000;">Freelancer</button>
-        <span class="mode-separator">/</span>
-        <button class="mode-btn" onclick="switchMode('business')" style="color:#000;">Business</button>
-      </div>
-    </div>
-    <button class="mobile-menu-btn light-mode-menu" onclick="openMobileMenu()" style="color:#000;"><span></span><span></span><span></span></button>
-  </nav>
-  <div class="page-inner">
-    <button class="back-btn" onclick="showPage(lastMode)">← Back</button>
-    <div class="products-grid">
-      <div class="product-card fade-in">
-        <div class="product-tag">TIER 01</div>
-        <div class="product-title">AI Winner Pack</div>
-        <div class="product-desc">Done-for-you AI creatives — 5 pieces (3 images + 2 videos) built to stop the scroll and win the sale. Ad-ready, premium quality. One-time delivery. No retainer, no commitment.</div>
-        <div class="product-card-footer">
-          <div class="product-price">Lock in price: UGX 70,000/18.99$ for the full pack.<br><span style="font-size:0.8rem;opacity:0.5;">Need more? Additional image 10k, video 30k. Start today.</span></div>
-          <button class="rocket-btn" onclick="getAccess()">
-            <div class="btn-outline"></div>
-            <div class="btn-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M12 2L12 22M12 2L6 8M12 2L18 8"/></svg></div>
-            <div class="btn-state btn-state-default"><p><span style="--i:0">G</span><span style="--i:1">e</span><span style="--i:2">t</span><span style="--i:3">&nbsp;</span><span style="--i:4">A</span><span style="--i:5">c</span><span style="--i:6">c</span><span style="--i:7">e</span><span style="--i:8">s</span><span style="--i:9">s</span></p></div>
-            <div class="btn-state-sent"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5"><polyline points="20,6 9,17 4,12"/></svg><span style="--i:0">G</span><span style="--i:1">r</span><span style="--i:2">a</span><span style="--i:3">n</span><span style="--i:4">t</span><span style="--i:5">e</span><span style="--i:6">d</span></div>
-          </button>
-        </div>
-      </div>
+  </div>
+  <div class="mnav-row2">
+    <div class="noval" id="p-oval-m" style="width:100%"><div class="noval-s" id="p-oval-m-s"></div><div class="noval-i" onclick="go('home')" style="flex:1;text-align:center">Home</div><div class="noval-i on" onclick="go('products')" style="flex:1;text-align:center">Products</div><div class="noval-i" onclick="go('skintypes')" style="flex:1;text-align:center">Skin Type</div></div>
+  </div>
+</div>
+</div>
+</div>
 
-      <div class="product-card fade-in fade-in-delay-2">
-        <div class="product-tag">TIER 02</div>
-        <div class="product-title">AI Brand Builder</div>
-        <div class="product-desc">One month. Rivela works hand-in-hand with your brand — building your AI model identity, content library, and ad-ready creatives. Strategy + execution, together.</div>
-        <div class="product-card-footer">
-          <div class="product-price">Enterprise pricing. DM to apply.</div>
-          <button class="rocket-btn" onclick="showPage('project-info')">
-            <div class="btn-outline"></div>
-            <div class="btn-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M12 2L12 22M12 2L6 8M12 2L18 8"/></svg></div>
-            <div class="btn-state btn-state-default"><p><span style="--i:0">S</span><span style="--i:1">t</span><span style="--i:2">a</span><span style="--i:3">r</span><span style="--i:4">t</span><span style="--i:5">&nbsp;</span><span style="--i:6">P</span><span style="--i:7">r</span><span style="--i:8">o</span><span style="--i:9">j</span><span style="--i:10">e</span><span style="--i:11">c</span><span style="--i:12">t</span></p></div>
-            <div class="btn-state-sent"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5"><polyline points="20,6 9,17 4,12"/></svg><span style="--i:0">D</span><span style="--i:1">o</span><span style="--i:2">n</span><span style="--i:3">e</span></div>
-          </button>
-        </div>
-      </div>
+<!-- HERO CAROUSEL -->
+<section class="container" style="margin-top:10px">
+  <div class="csl" id="ph-csl">
+    <div class="csl-t" id="ph-csl-t">
+      <div class="csl-sl" style="position:relative"><img src="https://models.valts.online/celara/p1.png" alt="" style="aspect-ratio:16/8;object-fit:cover"><div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center"><span style="font-family:var(--fserif);font-weight:300;letter-spacing:.2em;color:#fff;font-size:clamp(.9rem,2.5vw,1.4rem);text-shadow:0 2px 20px rgba(0,0,0,.5)">You just never knew Celara.</span></div></div>
+      <div class="csl-sl" style="position:relative"><img src="https://models.valts.online/celara/p2.png" alt="" style="aspect-ratio:16/8;object-fit:cover"><div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center"><span style="font-family:var(--fserif);font-weight:300;letter-spacing:.2em;color:#fff;font-size:clamp(.9rem,2.5vw,1.4rem);text-shadow:0 2px 20px rgba(0,0,0,.5)">You just never knew Celara.</span></div></div>
+      <div class="csl-sl" style="position:relative"><img src="https://models.valts.online/celara/p3.png" alt="" style="aspect-ratio:16/8;object-fit:cover"><div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center"><span style="font-family:var(--fserif);font-weight:300;letter-spacing:.2em;color:#fff;font-size:clamp(.9rem,2.5vw,1.4rem);text-shadow:0 2px 20px rgba(0,0,0,.5)">You just never knew Celara.</span></div></div>
+      <div class="csl-sl" style="position:relative"><img src="https://models.valts.online/celara/p4.png" alt="" style="aspect-ratio:16/8;object-fit:cover"><div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center"><span style="font-family:var(--fserif);font-weight:300;letter-spacing:.2em;color:#fff;font-size:clamp(.9rem,2.5vw,1.4rem);text-shadow:0 2px 20px rgba(0,0,0,.5)">You just never knew Celara.</span></div></div>
+    </div>
+    <button class="csl-btn prv" onclick="cslMove('ph',-1)">&#8249;</button>
+    <button class="csl-btn nxt" onclick="cslMove('ph',1)">&#8250;</button>
+  </div>
+  <div class="csl-dots" id="ph-dots"></div>
+</section>
+
+<!-- 8 products text -->
+<section class="container" style="text-align:center;margin-top:10px"><p style="font-weight:600;letter-spacing:.1em;font-size:13px">8 products — All skin types.</p></section>
+
+<!-- MARQUEE -->
+<div class="mw" style="margin-top:8px"><div class="mt-track"><span>OPEN FROM: 8AM-5PM</span><span>SAME DAY DELIVERY</span><span>WHATSAPP US ON 0770892824</span><span>OPEN FROM: 8AM-5PM</span><span>SAME DAY DELIVERY</span><span>WHATSAPP US ON 0770892824</span></div></div>
+
+<!-- SALES -->
+<section class="container" style="text-align:center;margin-top:1.2rem;max-width:620px">
+  <p style="font-size:13px;font-weight:300;color:var(--g55);line-height:1.7">Discover Celara's full collection — each product crafted with nature's most potent ingredients.<br>Build the routine your skin has been waiting for.</p>
+</section>
+
+<!-- SIZE SEL -->
+<section class="container" style="text-align:center;margin-top:1rem">
+  <div class="ssel" id="p-ssel"><div class="ssel-i on" onclick="setPrdSize('small')">Small</div><div class="ssel-i" onclick="setPrdSize('large')">Large</div></div>
+</section>
+
+<!-- PRODUCT GRID -->
+<section class="container" style="margin-top:1.5rem"><div class="pgrid" id="p-grid"></div></section>
+
+<!-- CLOSING -->
+<section class="container" style="margin-top:2rem;text-align:center;max-width:580px">
+  <p style="font-size:13px;font-weight:400;color:var(--g55);line-height:1.7">These products have healed hundreds. You can be next. Start your routine today and experience the difference nature can make.</p>
+</section>
+
+<!-- FOOTER -->
+<footer style="margin-top:auto;border-top:1px solid var(--gee);padding:14px 0">
+<div class="container">
+  <div class="ftr-desktop">
+    <div><img src="https://models.valts.online/celara/clogo.png" alt="Celara" style="height:24px;object-fit:contain"></div>
+    <div style="display:flex;gap:14px;align-items:center">
+      <a href="https://instagram.com/celaraskincare" target="_blank"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5"/></svg></a>
+      <a href="https://tiktok.com/@celaraskincare" target="_blank"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/></svg></a>
+      <a href="https://wa.me/256770892824" target="_blank"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg></a>
+    </div>
+    <div style="font-size:10px;letter-spacing:.12em;font-weight:500">Beauty.Care.Confidence</div>
+  </div>
+  <div class="ftr-phone">
+    <div style="display:flex;gap:16px;align-items:center">
+      <a href="https://instagram.com/celaraskincare" target="_blank"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5"/></svg></a>
+      <a href="https://tiktok.com/@celaraskincare" target="_blank"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/></svg></a>
+      <a href="https://wa.me/256770892824" target="_blank"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg></a>
+    </div>
+    <div style="display:flex;align-items:center;gap:16px">
+      <img src="https://models.valts.online/celara/clogo.png" alt="Celara" style="height:22px;object-fit:contain">
+      <span style="font-size:10px;letter-spacing:.12em;font-weight:500">Beauty.Care.Confidence</span>
     </div>
   </div>
 </div>
+</footer>
+</div>
 
-<!-- ===== PROJECT INFO PAGE ===== -->
-<div class="page theme-light" id="page-project-info">
-  <nav class="nav-light">
-    <a class="nav-logo" onclick="showPage(lastMode)" style="cursor:pointer;">
-      <img src="https://models.valts.online/Rivela/l1.png" alt="Rivela AI-Studio" />
-    </a>
-    <div class="nav-right">
-      <button class="mode-btn" onclick="showPage(lastMode)" style="color:#000; opacity:0.5;">← Back</button>
+<!-- ====================== PAGE: SKIN TYPES ====================== -->
+<div class="page" id="pg-skintypes">
+<!-- NAV -->
+<div style="position:sticky;top:0;z-index:100;background:var(--pw);border-bottom:1px solid var(--gee)">
+<div class="container">
+<div class="dnav" style="padding:10px 0">
+  <div style="cursor:pointer" onclick="go('home')"><img src="https://models.valts.online/celara/wlogo.png" alt="Celara" style="height:28px;object-fit:contain"></div>
+  <div class="noval" id="st-oval"><div class="noval-s" id="st-oval-s"></div><div class="noval-i" onclick="go('home')">Home</div><div class="noval-i" onclick="go('products')">Products</div><div class="noval-i on" onclick="go('skintypes')">Skin Type</div></div>
+  <div style="display:flex;align-items:center;gap:10px">
+    <span onclick="openS()" style="cursor:pointer"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></span>
+    <span onclick="openC()" style="cursor:pointer;position:relative"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg><span class="cbadge" style="position:absolute;top:-5px;right:-7px;background:var(--bk);color:var(--w);font-size:8px;width:14px;height:14px;border-radius:50%;display:none;align-items:center;justify-content:center;font-weight:700">0</span></span>
+    <button class="btn-bk" onclick="openC()" style="padding:6px 14px;font-size:10px">Shop Now</button>
+  </div>
+</div>
+<div class="mnav" style="flex-direction:column">
+  <div class="mnav-row1">
+    <div style="cursor:pointer" onclick="go('home')"><img src="https://models.valts.online/celara/wlogo.png" alt="Celara" style="height:26px;object-fit:contain"></div>
+    <div style="display:flex;align-items:center;gap:10px">
+      <span onclick="openS()" style="cursor:pointer"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></span>
+      <span onclick="openC()" style="cursor:pointer;position:relative"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg></span>
     </div>
-    <button class="mobile-menu-btn light-mode-menu" onclick="openMobileMenu()" style="color:#000;"><span></span><span></span><span></span></button>
-  </nav>
-  <div class="page-inner">
-    <button class="back-btn" onclick="showPage('business')">← Back to Business</button>
-    <div class="form-container">
-      <div style="margin-bottom:2.5rem;">
-        <h1 style="font-family:var(--cinzel);font-size:clamp(1.4rem,3vw,2rem);font-weight:400;letter-spacing:0.08em;margin-bottom:0.7rem;">Project Inquiry</h1>
-        <p style="font-size:1.05rem;opacity:0.5;font-weight:300;line-height:1.7;">Tell us about your brand and we'll build something that actually sells.</p>
-      </div>
+  </div>
+  <div class="mnav-row2">
+    <div class="noval" id="st-oval-m" style="width:100%"><div class="noval-s" id="st-oval-m-s"></div><div class="noval-i" onclick="go('home')" style="flex:1;text-align:center">Home</div><div class="noval-i" onclick="go('products')" style="flex:1;text-align:center">Products</div><div class="noval-i on" onclick="go('skintypes')" style="flex:1;text-align:center">Skin Type</div></div>
+  </div>
+</div>
+</div>
+</div>
 
-      <div class="form-field fade-in">
-        <label class="form-label">Full Names <span class="required">*</span></label>
-        <input type="text" class="form-input" id="fi-name" placeholder="Your full name" />
-      </div>
+<!-- HERO -->
+<section style="width:100%;position:relative">
+  <img src="https://models.valts.online/celara/p3.png" alt="Skin Types" style="width:100%;aspect-ratio:16/7;object-fit:cover">
+  <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center"><span style="font-weight:600;letter-spacing:.15em;color:#fff;font-size:13px;text-shadow:0 2px 20px rgba(0,0,0,.5)">8 products — All-Skintypes.</span></div>
+</section>
 
-      <div class="form-field fade-in fade-in-delay-1">
-        <label class="form-label">Phone Number or Email <span class="required">*</span></label>
-        <input type="text" class="form-input" id="fi-contact" placeholder="+256 or email@brand.com" />
-      </div>
+<!-- MARQUEE -->
+<div class="mw"><div class="mt-track"><span>OPEN FROM: 8AM-5PM</span><span>SAME DAY DELIVERY</span><span>WHATSAPP US ON 0770892824</span><span>OPEN FROM: 8AM-5PM</span><span>SAME DAY DELIVERY</span><span>WHATSAPP US ON 0770892824</span></div></div>
 
-      <div class="form-field fade-in fade-in-delay-2">
-        <label class="form-label">Your Company or Your Role</label>
-        <input type="text" class="form-input" id="fi-company" placeholder="Brand name / your role" />
-      </div>
+<!-- SALES -->
+<section class="container" style="text-align:center;margin-top:1.2rem;max-width:620px">
+  <p style="font-size:13px;font-weight:300;color:var(--g55);line-height:1.7">Your skin is unique. Choose your type below and discover the complete Celara package designed specifically for deep healing and transformation</p>
+  <p style="font-weight:600;letter-spacing:.1em;font-size:13px;margin-top:1.2rem;text-transform:uppercase">Types / Packages</p>
+</section>
 
-      <div class="form-field fade-in fade-in-delay-2">
-        <label class="form-label">Project Type <span class="required">*</span> <span style="opacity:0.45;font-size:0.7rem;">Pick what applies.</span></label>
-        <div class="chips-grid" id="projectTypeChips">
-          <button class="chip" onclick="toggleChip(this)">AI Product Photos</button>
-          <button class="chip" onclick="toggleChip(this)">Social Ads (Short-form video)</button>
-          <button class="chip" onclick="toggleChip(this)">Brand Identity</button>
-          <button class="chip" onclick="toggleChip(this)">AI Model Identity</button>
-          <button class="chip" onclick="toggleChip(this)">AI Winner Pack</button>
-          <button class="chip" onclick="toggleChip(this)">AI Brand Builder</button>
-          <button class="chip" onclick="toggleChip(this)">Content System</button>
-          <button class="chip" onclick="toggleChip(this)">Motion Design</button>
-          <button class="chip" onclick="toggleChip(this)">Other</button>
-        </div>
-      </div>
+<!-- PACKAGES GRID -->
+<section class="container" style="margin-top:1.2rem"><div class="pkgrid" id="st-grid"></div></section>
 
-      <div class="form-field fade-in fade-in-delay-3">
-        <label class="form-label">Project Description <span class="required">*</span> <span style="opacity:0.45;font-size:0.7rem;">One short paragraph with scope and goal.</span></label>
-        <textarea class="form-textarea" id="fi-desc" placeholder="Describe your project..."></textarea>
-      </div>
+<!-- CLOSING -->
+<section class="container" style="margin-top:2rem;text-align:center;max-width:580px">
+  <p style="font-size:13px;font-weight:400;color:var(--g55);line-height:1.7">Ready to transform? Select your skin type above and begin your personalized Celara journey today.</p>
+</section>
 
-      <div class="form-field fade-in fade-in-delay-3">
-        <label class="form-label">Budget Range (UGX–USD) <span class="required">*</span> <span style="opacity:0.45;font-size:0.7rem;">Input your estimated content and monthly ad spend budget.</span></label>
-        <input type="text" class="form-input" id="fi-budget" placeholder="e.g. UGX 200,000 / month" />
-      </div>
-
-      <div class="form-field fade-in fade-in-delay-4">
-        <label class="form-label">Looking for a retainer? <span class="required">*</span></label>
-        <div class="retainer-btns">
-          <button class="retainer-btn" onclick="selectRetainer(this, 'Yes')">Yes</button>
-          <button class="retainer-btn" onclick="selectRetainer(this, 'No')">No</button>
-          <button class="retainer-btn" onclick="selectRetainer(this, 'Maybe')">Maybe</button>
-        </div>
-      </div>
-
-      <div class="form-field fade-in fade-in-delay-4">
-        <label class="form-label">Current Brand Assets <span style="opacity:0.45;">(Optional)</span> <span style="opacity:0.45;font-size:0.7rem;">Name all/any if you have</span></label>
-        <input type="text" class="form-input" id="fi-assets" placeholder="Logo, model references, brand colours..." />
-      </div>
-
-      <div class="form-field fade-in fade-in-delay-5">
-        <label class="form-label">Anything Else? <span style="opacity:0.45;">(Optional)</span></label>
-        <textarea class="form-textarea" id="fi-extra" placeholder="References, inspirations, constraints..."></textarea>
-      </div>
-
-      <div class="form-submit-area fade-in fade-in-delay-5">
-        <button class="rocket-btn" onclick="submitProjectInquiry()" style="min-width:220px;">
-          <div class="btn-outline"></div>
-          <div class="btn-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M12 2L12 22M12 2L6 8M12 2L18 8"/></svg></div>
-          <div class="btn-state btn-state-default"><p>
-            <span style="--i:0">S</span><span style="--i:1">u</span><span style="--i:2">b</span><span style="--i:3">m</span><span style="--i:4">i</span><span style="--i:5">t</span>
-            <span style="--i:6">&nbsp;</span>
-            <span style="--i:7">I</span><span style="--i:8">n</span><span style="--i:9">q</span><span style="--i:10">u</span><span style="--i:11">i</span><span style="--i:12">r</span><span style="--i:13">y</span>
-          </p></div>
-          <div class="btn-state-sent">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5"><polyline points="20,6 9,17 4,12"/></svg>
-            <span style="--i:0">S</span><span style="--i:1">e</span><span style="--i:2">n</span><span style="--i:3">t</span>
-          </div>
-        </button>
-      </div>
+<!-- FOOTER -->
+<footer style="margin-top:auto;border-top:1px solid var(--gee);padding:14px 0">
+<div class="container">
+  <div class="ftr-desktop">
+    <div><img src="https://models.valts.online/celara/clogo.png" alt="Celara" style="height:24px;object-fit:contain"></div>
+    <div style="display:flex;gap:14px;align-items:center">
+      <a href="https://instagram.com/celaraskincare" target="_blank"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5"/></svg></a>
+      <a href="https://tiktok.com/@celaraskincare" target="_blank"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/></svg></a>
+      <a href="https://wa.me/256770892824" target="_blank"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg></a>
+    </div>
+    <div style="font-size:10px;letter-spacing:.12em;font-weight:500">Beauty.Care.Confidence</div>
+  </div>
+  <div class="ftr-phone">
+    <div style="display:flex;gap:16px;align-items:center">
+      <a href="https://instagram.com/celaraskincare" target="_blank"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5"/></svg></a>
+      <a href="https://tiktok.com/@celaraskincare" target="_blank"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/></svg></a>
+      <a href="https://wa.me/256770892824" target="_blank"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg></a>
+    </div>
+    <div style="display:flex;align-items:center;gap:16px">
+      <img src="https://models.valts.online/celara/clogo.png" alt="Celara" style="height:22px;object-fit:contain">
+      <span style="font-size:10px;letter-spacing:.12em;font-weight:500">Beauty.Care.Confidence</span>
     </div>
   </div>
 </div>
+</footer>
+</div>
 
-<!-- ===== JAVASCRIPT ===== -->
+<!-- ====================== PAGE: SKINTYPE DETAIL ====================== -->
+<div class="page" id="pg-std">
+<!-- NAV: Logo + Hamburger -->
+<div style="position:sticky;top:0;z-index:100;background:var(--pw);border-bottom:1px solid var(--gee);padding:10px 0">
+<div class="container" style="display:flex;align-items:center;justify-content:space-between">
+  <div style="cursor:pointer" onclick="go('home')"><img src="https://models.valts.online/celara/wlogo.png" alt="Celara" style="height:28px;object-fit:contain"></div>
+  <span onclick="openM()" style="cursor:pointer;font-size:22px">☰</span>
+</div>
+</div>
+
+<!-- BACK -->
+<div class="container" style="margin-top:6px">
+  <span onclick="go('skintypes')" style="cursor:pointer;display:flex;align-items:center;gap:4px;font-size:12px;font-weight:500">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg> Back
+  </span>
+</div>
+
+<!-- BA SIDE BY SIDE -->
+<section class="container" style="margin-top:10px">
+  <div class="ba-wrap">
+    <div class="ba-side" onclick="openLB(document.getElementById('std-bb').src)"><img id="std-bb" src="" alt="Before"><div class="ba-lbl">Before</div></div>
+    <div class="ba-side" onclick="openLB(document.getElementById('std-ba').src)"><img id="std-ba" src="" alt="After"><div class="ba-lbl">After</div></div>
+  </div>
+</section>
+
+<!-- NAME -->
+<div class="container" style="text-align:center;margin-top:10px"><p style="font-weight:600;letter-spacing:.08em;font-size:13px" id="std-name"></p></div>
+
+<!-- MARQUEE -->
+<div class="mw" style="margin-top:8px"><div class="mt-track"><span>OPEN FROM: 8AM-5PM</span><span>SAME DAY DELIVERY</span><span>WHATSAPP US ON 0770892824</span><span>OPEN FROM: 8AM-5PM</span><span>SAME DAY DELIVERY</span><span>WHATSAPP US ON 0770892824</span></div></div>
+
+<!-- BUY OPTIONS -->
+<section class="container" style="margin-top:1rem">
+  <div style="display:flex;align-items:center;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--gee)">
+    <div><span style="font-weight:600;font-size:14px" id="std-lp"></span><br><span style="font-size:10px;color:var(--g55)">all large</span></div>
+    <button class="btn-bk" onclick="buyPkg('large')">Shop Now</button>
+  </div>
+  <div style="display:flex;align-items:center;justify-content:space-between;padding:8px 0">
+    <div><span style="font-weight:600;font-size:14px" id="std-sp"></span><br><span style="font-size:10px;color:var(--g55)">all small</span></div>
+    <button class="btn-bk" onclick="buyPkg('small')">Shop Now</button>
+  </div>
+</section>
+
+<!-- SIZE SEL -->
+<section class="container" style="text-align:center;margin-top:.8rem">
+  <div class="ssel" id="std-ssel"><div class="ssel-i on" onclick="setSTDSize('small')">Small</div><div class="ssel-i" onclick="setSTDSize('large')">Large</div></div>
+</section>
+
+<!-- PRODUCTS LIST -->
+<section class="container" style="margin-top:.8rem"><p style="font-size:11px;color:var(--g55)" id="std-pl"></p></section>
+
+<!-- SALES MSG -->
+<section class="container" style="margin-top:.8rem;max-width:600px"><p style="font-size:13px;font-weight:400;color:var(--g55);line-height:1.7" id="std-msg"></p></section>
+
+<!-- PRODUCT BOXES -->
+<section class="container" style="margin-top:1.2rem"><div class="pgrid" id="std-pgrid"></div></section>
+
+<!-- CLOSING -->
+<section class="container" style="margin-top:2rem;text-align:center">
+  <p style="font-size:13px;font-weight:500;color:var(--g55);line-height:1.6">Trust the process by starting the process. Today.</p>
+</section>
+
+<!-- FOOTER -->
+<footer style="margin-top:auto;border-top:1px solid var(--gee);padding:14px 0">
+<div class="container">
+  <div class="ftr-desktop">
+    <div><img src="https://models.valts.online/celara/clogo.png" alt="Celara" style="height:24px;object-fit:contain"></div>
+    <div style="display:flex;gap:14px;align-items:center">
+      <a href="https://instagram.com/celaraskincare" target="_blank"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5"/></svg></a>
+      <a href="https://tiktok.com/@celaraskincare" target="_blank"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/></svg></a>
+      <a href="https://wa.me/256770892824" target="_blank"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg></a>
+    </div>
+    <div style="font-size:10px;letter-spacing:.12em;font-weight:500">Beauty.Care.Confidence</div>
+  </div>
+  <div class="ftr-phone">
+    <div style="display:flex;gap:16px;align-items:center">
+      <a href="https://instagram.com/celaraskincare" target="_blank"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5"/></svg></a>
+      <a href="https://tiktok.com/@celaraskincare" target="_blank"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/></svg></a>
+      <a href="https://wa.me/256770892824" target="_blank"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg></a>
+    </div>
+    <div style="display:flex;align-items:center;gap:16px">
+      <img src="https://models.valts.online/celara/clogo.png" alt="Celara" style="height:22px;object-fit:contain">
+      <span style="font-size:10px;letter-spacing:.12em;font-weight:500">Beauty.Care.Confidence</span>
+    </div>
+  </div>
+</div>
+</footer>
+</div>
+
+<!-- ====================== PAGE: PRODUCT DETAIL ====================== -->
+<div class="page" id="pg-pd">
+<!-- NAV: Logo + Search + Cart + Menu -->
+<div style="position:sticky;top:0;z-index:100;background:var(--pw);border-bottom:1px solid var(--gee);padding:10px 0">
+<div class="container" style="display:flex;align-items:center;justify-content:space-between">
+  <div style="cursor:pointer" onclick="go('home')"><img src="https://models.valts.online/celara/wlogo.png" alt="Celara" style="height:28px;object-fit:contain"></div>
+  <div style="display:flex;align-items:center;gap:10px">
+    <span onclick="openS()" style="cursor:pointer"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></span>
+    <span onclick="openC()" style="cursor:pointer;position:relative"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg><span class="cbadge" style="position:absolute;top:-5px;right:-7px;background:var(--bk);color:var(--w);font-size:8px;width:14px;height:14px;border-radius:50%;display:none;align-items:center;justify-content:center;font-weight:700">0</span></span>
+    <span onclick="openM()" style="cursor:pointer;font-size:20px">☰</span>
+  </div>
+</div>
+</div>
+
+<!-- BACK -->
+<div class="container" style="margin-top:6px">
+  <span id="pd-back" onclick="goBack()" style="cursor:pointer;display:flex;align-items:center;gap:4px;font-size:12px;font-weight:500">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg> Back
+  </span>
+</div>
+
+<!-- MAIN LAYOUT -->
+<section class="container" style="margin-top:10px">
+<div class="pd-lay">
+  <!-- LEFT: Images -->
+  <div>
+    <p style="font-weight:600;font-size:18px;margin-bottom:8px;font-family:var(--fserif);letter-spacing:.04em" id="pd-title"></p>
+    <div class="csl" id="pd-csl">
+      <div class="csl-t" id="pd-csl-t"></div>
+      <button class="csl-btn prv" onclick="cslMove('pd',-1)">&#8249;</button>
+      <button class="csl-btn nxt" onclick="cslMove('pd',1)">&#8250;</button>
+    </div>
+    <div class="csl-dots" id="pd-dots"></div>
+  </div>
+  <!-- RIGHT: Details -->
+  <div>
+    <div style="margin-bottom:12px">
+      <span style="font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:.1em">Size</span>
+      <div class="ssel" id="pd-ssel" style="margin-top:6px"><div class="ssel-i on" onclick="setPDSize('small')">Small</div><div class="ssel-i" onclick="setPDSize('large')">Large</div></div>
+    </div>
+    <p style="font-weight:700;font-size:22px" id="pd-price"></p>
+    <div style="display:flex;align-items:center;gap:10px;margin-top:8px">
+      <button class="btn-bk" onclick="buyPD()">Shop Now</button>
+      <span onclick="buyPD()" style="cursor:pointer"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg></span>
+    </div>
+    <p style="font-size:12px;color:var(--g55);margin-top:8px"><span style="font-weight:500;color:var(--bk)">Capacity:</span> <span id="pd-cap"></span></p>
+    <div style="display:flex;align-items:center;gap:10px;margin-top:8px">
+      <span style="font-weight:500;font-size:11px;text-transform:uppercase;letter-spacing:.08em">Quantity</span>
+      <div class="qctrl"><button class="qbtn" onclick="chgQty(-1)">−</button><span class="qval" id="pd-qty">1</span><button class="qbtn" onclick="chgQty(1)">+</button></div>
+    </div>
+    <!-- EXPANDABLES -->
+    <div style="margin-top:1.2rem">
+      <div class="exp"><div class="exp-h" onclick="togExp(this)"><span>Description</span><span>+</span></div><div class="exp-c" id="pd-desc"></div></div>
+      <div class="exp"><div class="exp-h" onclick="togExp(this)"><span>How to use the product</span><span>+</span></div><div class="exp-c" id="pd-howto"></div></div>
+      <div class="exp"><div class="exp-h" onclick="togExp(this)"><span>Ingredients</span><span>+</span></div><div class="exp-c" id="pd-ing"></div></div>
+      <div class="exp"><div class="exp-h" onclick="togExp(this)"><span>Delivery info</span><span>+</span></div><div class="exp-c">We are available Monday to Sunday from 8:00 AM to 5:00 PM. Same-day delivery is possible when you order early before 3pm. Delivery is handled via our own trusted rider, and the transport fee is calculated based on your location and covered by the client. All orders and deliveries are coordinated smoothly through WhatsApp for your convenience.</div></div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- YOU MAY ALSO LIKE -->
+<section class="container" style="margin-top:2rem">
+  <p style="font-weight:600;font-size:12px;text-transform:uppercase;letter-spacing:.1em;margin-bottom:8px">You may also like</p>
+  <div class="sggrid" id="pd-sug"></div>
+</section>
+
+<!-- FOOTER -->
+<footer style="margin-top:auto;border-top:1px solid var(--gee);padding:14px 0">
+<div class="container" style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.8rem">
+  <div><img src="https://models.valts.online/celara/clogo.png" alt="Celara" style="height:24px;object-fit:contain"></div>
+  <div style="font-size:10px;letter-spacing:.12em;font-weight:500">Beauty.Care.Confidence</div>
+</div>
+</footer>
+</div>
+
+<!-- ====================== JS ====================== -->
 <script>
-  // ===== STATE =====
-  let lastMode = 'freelancer';
-  let projectInfoFilled = false;
-  let retainerValue = '';
+const C='https://models.valts.online/celara/';
+const WA='256770892824';
 
-  // Main center carousel images (same on both pages)
-  const carousels = {
-    free: {
-      images: [
-        'https://models.valts.online/Rivela/1.png',
-        'https://models.valts.online/Rivela/2.png',
-        'https://models.valts.online/Rivela/3.png',
-        'https://models.valts.online/Rivela/4.png',
-        'https://models.valts.online/Rivela/5.png'
-      ],
-      current: 0
-    },
-    biz: {
-      images: [
-        'https://models.valts.online/Rivela/1.png',
-        'https://models.valts.online/Rivela/2.png',
-        'https://models.valts.online/Rivela/3.png',
-        'https://models.valts.online/Rivela/4.png',
-        'https://models.valts.online/Rivela/5.png'
-      ],
-      current: 0
-    }
-  };
+const PR=[
+{id:'f',nm:'Facial Cleanser',s:{p:35000,c:'100ml',i:'fs1.png'},l:{p:60000,c:'250ml',i:'fb1.png'},v:'fv.mp4',cb:'fcb.png',
+ d:'Deeply cleanses without stripping, leaving your skin fresh, balanced, and ready to absorb nourishment. Removes impurities and excess oil while preserving your skin\'s natural glow and softness.',
+ h:'1. Moisten face.\n2. Lather cleanser apply a small amount and gently massage in circular motions for 30–60 seconds.\n3. Rinse clean.\n4. Follow with your Celara routine.',
+ ig:'Aqua, Cocamidopropyl Betain, Honey (Mel), Turmeric (Curcuma Longa) Extract, Tea Tree Oil (Melaleuca Alternifolia), Xanthan Gum, Carboxymethyl Cellulose (CMC), Fragrance, Preservative.'},
+{id:'g',nm:'Glow Serum Oil',s:{p:25000,c:'60ml',i:'gs1.png'},l:{p:45000,c:'100ml',i:'gb1.png'},v:'gv.mp4',cb:'gcb.png',
+ d:'Delivers intense hydration and a visible luminous glow, revealing smoother, more radiant skin. Penetrates deeply to brighten and plump your skin for that healthy, lit-from-within look.',
+ h:'1. Dispense a few drops onto clean skin.\n2. Gently massage until absorbed. Allow to sink in fully.\n3. Use daily for radiant glow, morning and/or night.\n4. Follow with moisturizer.',
+ ig:'Helianthus Annuus (Sunflower) Seed Oil, Daucus Carota Sativa (Carrot) Seed Oil, Tocopherol (Vitamin E), Vanilla Planifolia Fruit Extract, Jasminum Officinale (Jasmine) Oil, Citrus Limon (Lemon) Peel Oil.'},
+{id:'t',nm:'Balancing Toner',s:{p:25000,c:'60ml',i:'ts1.png'},l:{p:45000,c:'100ml',i:'tb1.png'},v:'tv.mp4',cb:'tcb.png',
+ d:'Perfectly balances skin pH, minimizes pores, and prepares skin for maximum absorption. Soothes, refreshes, and creates the ideal foundation for glowing, even-toned skin.',
+ h:'1. Cleanse face first.\n2. Apply toner with cotton or hands.\n3. Pat gently into skin. Let it absorb.\n4. Follow with serum or moisturizer.',
+ ig:'Water (Aqua), Glycerin, Apple Cider Vinegar (Malus Domestica Fruit Vinegar), Hibiscus Sabdariffa Flower Extract, Phenoxyethanol (Optiphen).'},
+{id:'bu',nm:'Body Butter',s:{p:35000,c:'120g',i:'bus1.png'},l:{p:60000,c:'250g',i:'bub1.png'},v:'buv.mp4',cb:'bucb.png',
+ d:'Deeply nourishes and locks in moisture for soft, smooth, supple skin all day long. Transforms dry, rough skin into silky, hydrated perfection with lasting comfort.',
+ h:'1. Apply on clean, slightly damp skin.\n2. Massage into skin until absorbed.\n3. Focus on dry areas.\n4. Use daily, especially after shower, morning and night.',
+ ig:'Petrolatum, Shea Butter, Ghee, Helianthus Annuus (Sunflower) Seed Oil, Stearic Acid, Daucus Carota Sativa (Carrot) Seed Oil, Aloe Barbadensis Leaf Oil, Beeswax (Cera Alba), Vanilla Planifolia Fruit Extract.'},
+{id:'ac',nm:'Acne Bar',s:{p:50000,c:'120g',i:'acs1.png'},l:null,v:'acv.mp4',cb:'accb.png',
+ d:'Clears breakouts, reduces inflammation, and helps reveal clearer, calmer skin. Targets acne and blemishes while soothing and balancing your complexion.',
+ h:'1. Lather / Wet bar and face.\n2. Gently rub on affected areas to create lather for 1 minute.\n3. Leave for 30–60 seconds then rinse and pat dry.\n4. Use morning and evening.',
+ ig:'Sodium Palmate (Soap Base from Palm Oil), Aqua (Water), Aloe Barbadensis Leaf Juice, Honey (Mel), Elaeis Guineensis (Palm) Oil, Hibiscus Sabdariffa Flower Extract, Citrus Limon (Lemon) Peel Oil, Melaleuca Alternifolia (Tea Tree) Leaf Oil, Azadirachta Indica (Neem) Leaf Extract.'},
+{id:'cg',nm:'Cleansing & Glow Soap',s:{p:30000,c:'120g',i:'cgs1.png'},l:null,v:'cgv.mp4',cb:'cgcb.png',
+ d:'Removes dirt and reveals brighter, smoother, more luminous and lasting soft skin with every use. Cleanses deeply yet leaves skin glowing, hydrated, and beautifully refreshed.',
+ h:'1. Lather / Wet bar and face.\n2. Lather and shower whole body gently.\n3. Rinse thoroughly.\n4. Use daily for glowing skin.',
+ ig:'Sodium Palmate (Soap Base from Palm Oil), Aqua (Water), Aloe Barbadensis Leaf Juice, Honey (Mel), Elaeis Guineensis (Palm) Oil, Hibiscus Sabdariffa Flower Extract, Citrus Limon (Lemon) Peel Oil, Melaleuca Alternifolia (Tea Tree) Leaf Oil, Azadirachta Indica (Neem) Leaf Extract.'},
+{id:'m',nm:'Moisturizer Cream',s:{p:45000,c:'100ml',i:'ms1.png'},l:{p:75000,c:'250ml',i:'mb1.png'},v:'mv.mp4',cb:'mcb.png',
+ d:'Locks in deep hydration, smooths texture, and leaves skin supple and radiant. Provides all-day moisture and comfort while improving skin\'s natural glow.',
+ h:'1. On clean skin, apply desired amount.\n2. Smooth evenly over face.\n3. Massage gently until absorbed. Lock in moisture.\n4. Daily use recommended.',
+ ig:'Water, Aloe Leaf Juice, Glycerin, Niacinamide, Polysorbate 80, Helianthus Annuus (Sunflower) Seed Oil, Tea Leaf Oil, Neem Oil, Phenoxyethanol (Optiphen), Tocopherol (Vitamin E), Fragrance (Carrot).'},
+{id:'e',nm:'Exfoliating Scrub',s:{p:35000,c:'120g',i:'es1.png'},l:{p:60000,c:'250g',i:'eb1.png'},v:'ev.mp4',cb:'ecb.png',
+ d:'Gently removes dead skin cells to reveal smoother, brighter, and more even skin. Refines texture and unclogs pores for a fresh, glowing complexion.',
+ h:'1. Cleanse face first.\n2. Apply scrub and gently massage in circular motions.\n3. Rinse thoroughly.\n4. Use 4–5 times per week.',
+ ig:'Aqua, Coffee Seed Powder, Sucrose, Sodium Chloride, Cocamidopropyl Betaine, Sunflower Seed Oil, Cetyl Alcohol (E-Wax), Stearic Acid, Turmeric Extract, Optiphen.'}
+];
 
-  // Business circle carousels
-  const circleCarousels = {
-    products: {
-      images: [
-        'https://models.valts.online/Rivela/p1.png',
-        'https://models.valts.online/Rivela/p2.png',
-        'https://models.valts.online/Rivela/p3.png',
-        'https://models.valts.online/Rivela/p4.png',
-        'https://models.valts.online/Rivela/p5.png'
-      ],
-      current: 0
-    },
-    avatars: {
-      images: [
-        'https://models.valts.online/Rivela/a1.png',
-        'https://models.valts.online/Rivela/a2.png',
-        'https://models.valts.online/Rivela/a3.png',
-        'https://models.valts.online/Rivela/a4.png',
-        'https://models.valts.online/Rivela/a5.png'
-      ],
-      current: 0
-    }
-  };
+const PK=[
+{id:1,nm:'Balanced Skin Package',bb:'bb1.png',ba:'ba1.png',it:['cg','f','t','bu','g','e'],sp:185000,lp:300000,
+ d:'Your skin is already in harmony but needs consistent care. This complete package maintains balance, boosts radiance, and prevents future concerns.'},
+{id:2,nm:'Hyperpigmented / Dark Spots / Uneven Tone Package',bb:'bb2.png',ba:'ba2.png',it:['cg','f','t','m','e','g','ac'],sp:245000,lp:365000,
+ d:'Struggling with dark spots, patches, or uneven tone? This powerful package fades discoloration, hyperpigmentation and restores bright, even, radiant skin.'},
+{id:3,nm:'Dry Skin Package',bb:'bb3.png',ba:'ba3.png',it:['cg','f','t','bu','g','e'],sp:185000,lp:300000,
+ d:'Constant dryness, tightness, and flakiness? This package deeply hydrates, repairs, and restores soft, supple, comfortable skin.'},
+{id:4,nm:'Oily Skin (Acne/Pimples) Package',bb:'bb4.png',ba:'ba4.png',it:['cg','f','t','m','e','ac'],sp:220000,lp:320000,
+ d:'Oily skin with frequent breakouts and shine? End the cycle of acne and excess oil. These targeted products purify, soothe, and restore clarity to your complexion.'},
+{id:5,nm:'Dry Skin (Pimples / Acne & Rashes) Package',bb:'bb5.png',ba:'ba5.png',it:['cg','f','t','m','g','ac'],sp:210000,lp:305000,
+ d:'Dry yet breaking out? This unique package hydrates deeply while calming acne and rashes for balanced, healed skin — this routine nourishes without clogging and clears blemishes gently.'},
+{id:6,nm:'Combination Skin Package',bb:'bb6.png',ba:'ba6.png',it:['cg','f','t','m','g','e','ac'],sp:245000,lp:365000,
+ d:'Oily T-zone with dry cheeks? This package balances different areas, controls shine, and hydrates where needed.'},
+{id:7,nm:'Stretch Marks Package',bb:'bb7.png',ba:'ba7.png',it:['cg','f','t','bu','g','e'],sp:185000,lp:300000,
+ d:'Visible stretch marks affecting your confidence? This package improves skin elasticity, fades marks, and restores smooth, even texture.'}
+];
 
-  // ===== LOADING SCREEN — max 5 seconds =====
-  function hideLoader() {
-    const ls = document.getElementById('loadingScreen');
-    if (ls && !ls.classList.contains('hide')) {
-      ls.classList.add('hide');
-    }
-  }
-  // Hide after 5 seconds no matter what
-  const loaderTimeout = setTimeout(hideLoader, 5000);
-  // Hide as soon as page is fully loaded if that's faster
-  window.addEventListener('load', () => {
-    clearTimeout(loaderTimeout);
-    // Small delay so the animation isn't jarring on fast connections
-    setTimeout(hideLoader, 800);
-    // Init all carousels after load
-    renderCarousel('free');
-    renderCarousel('biz');
+// STATE
+let curPage='home',prevPage='home',prSize='small',stdSize='small',pdSize='small',pdQty=1,curPID=null,curPKID=null;
+let cart=[],cslS={},hBAIdx=0,hBAInt;
+
+// NAV
+function go(p){
+  prevPage=curPage;curPage=p;
+  document.querySelectorAll('.page').forEach(e=>e.classList.remove('active'));
+  const el=document.getElementById('pg-'+p);if(el)el.classList.add('active');
+  window.scrollTo(0,0);updOvals();updBadges();
+  if(p==='home')startHBA();else stopHBA();
+}
+
+function updOvals(){
+  // desktop ovals
+  const map={home:['h-oval',0],products:['p-oval',1],skintypes:['st-oval',2]};
+  Object.entries(map).forEach(([pg,[oid,activeIdx]])=>{
+    const o=document.getElementById(oid);if(!o)return;
+    const items=o.querySelectorAll('.noval-i');const sel=o.querySelector('.noval-s');
+    items.forEach((it,i)=>{it.classList.toggle('on',i===activeIdx)});
+    const ai=items[activeIdx];if(ai&&sel){sel.style.left=ai.offsetLeft+'px';sel.style.width=ai.offsetWidth+'px'}
   });
-
-  // ===== PAGE NAVIGATION =====
-  function showPage(pageName) {
-    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-    const target = document.getElementById('page-' + pageName);
-    if (target) {
-      target.classList.add('active');
-      window.scrollTo(0, 0);
-    }
-    if (pageName === 'freelancer' || pageName === 'business') {
-      lastMode = pageName;
-    }
-  }
-
-  function switchMode(mode) {
-    lastMode = mode;
-    showPage(mode);
-  }
-
-  // ===== MOBILE MENU =====
-  function openMobileMenu() {
-    document.getElementById('mobileOverlay').classList.add('open');
-    document.getElementById('mobilePanel').classList.add('open');
-    updateMobileModeButtons();
-  }
-  function closeMobileMenu() {
-    document.getElementById('mobileOverlay').classList.remove('open');
-    document.getElementById('mobilePanel').classList.remove('open');
-  }
-  function updateMobileModeButtons() {
-    const freeBtn = document.getElementById('mobileFreeBtn');
-    const bizBtn = document.getElementById('mobileBizBtn');
-    if (lastMode === 'freelancer') {
-      freeBtn.classList.add('active-mode'); freeBtn.classList.remove('glowing-mobile');
-      bizBtn.classList.remove('active-mode'); bizBtn.classList.add('glowing-mobile');
-    } else {
-      bizBtn.classList.add('active-mode'); bizBtn.classList.remove('glowing-mobile');
-      freeBtn.classList.remove('active-mode'); freeBtn.classList.add('glowing-mobile');
-    }
-  }
-
-  // ===== FREELANCER PROJECT INFO =====
-  let freeRetainerValue = '';
-  let freeProjectInfoFilled = false;
-
-  function toggleFreeChip(el) { el.classList.toggle('selected'); }
-
-  function selectFreeRetainer(el, val) {
-    document.querySelectorAll('.free-retainer-btn').forEach(b => b.classList.remove('selected'));
-    el.classList.add('selected');
-    freeRetainerValue = val;
-  }
-
-  function submitFreeInquiry() {
-    const name = document.getElementById('ffi-name').value.trim();
-    const contact = document.getElementById('ffi-contact').value.trim();
-    const role = document.getElementById('ffi-role').value.trim();
-    const desc = document.getElementById('ffi-desc').value.trim();
-    const budget = document.getElementById('ffi-budget').value.trim();
-    if (!name || !contact || !role || !desc || !budget) {
-      alert('Please fill in all required fields.');
-      return;
-    }
-    const selectedTypes = [...document.querySelectorAll('.free-chip.selected')].map(c => c.textContent).join(', ');
-    const data = {
-      name, contact, role,
-      types: selectedTypes || 'Not specified',
-      desc, budget,
-      retainer: freeRetainerValue || 'Not specified',
-      assets: document.getElementById('ffi-assets').value.trim() || 'None',
-      extra: document.getElementById('ffi-extra').value.trim() || 'None'
-    };
-    sessionStorage.setItem('rivela_free_project_data', JSON.stringify(data));
-    freeProjectInfoFilled = true;
-    const getBtn = document.getElementById('getAccessFreeBtn');
-    if (getBtn) getBtn.classList.remove('disabled-btn');
-    const navBtn = document.getElementById('navGetAccessFree');
-    if (navBtn) navBtn.classList.remove('disabled-btn');
-    setTimeout(() => showPage('freelancer'), 800);
-  }
-
-  function freeGetAccess() {
-    if (!freeProjectInfoFilled) return;
-    const stored = sessionStorage.getItem('rivela_free_project_data');
-    let msg = "Hey Rivela, I've completed my Project Inquiry. Here are my details:\n\n";
-    if (stored) {
-      const d = JSON.parse(stored);
-      msg += `Name: ${d.name}\nContact: ${d.contact}\nRole/Need: ${d.role}\nProject Type: ${d.types}\nDescription: ${d.desc}\nBudget: ${d.budget}\nRetainer: ${d.retainer}\nBrand Assets: ${d.assets}\nExtra: ${d.extra}`;
-    }
-    window.open('https://wa.me/256770892824?text=' + encodeURIComponent(msg), '_blank');
-  }
-
-  function mobileGetAccess() {
-    if (lastMode === 'freelancer') {
-      freeGetAccess();
-    } else {
-      bizGetAccess();
-    }
-  }
-
-  // ===== VIDEO LIGHTBOX =====
-  function openVideoLightbox(src) {
-    const lb = document.getElementById('videoLightbox');
-    const vid = document.getElementById('lightboxVideo');
-    const srcEl = document.getElementById('lightboxVideoSrc');
-    srcEl.src = src;
-    vid.load();
-    vid.play();
-    lb.classList.add('open');
-    document.body.style.overflow = 'hidden';
-  }
-  function closeVideoLightbox() {
-    const lb = document.getElementById('videoLightbox');
-    const vid = document.getElementById('lightboxVideo');
-    vid.pause();
-    vid.currentTime = 0;
-    lb.classList.remove('open');
-    document.body.style.overflow = '';
-  }
-  document.getElementById('videoLightbox').addEventListener('click', function(e) {
-    if (e.target === this) closeVideoLightbox();
+  // mobile ovals
+  const mmap={home:['h-oval-m',0],products:['p-oval-m',1],skintypes:['st-oval-m',2]};
+  Object.entries(mmap).forEach(([pg,[oid,activeIdx]])=>{
+    const o=document.getElementById(oid);if(!o)return;
+    const items=o.querySelectorAll('.noval-i');const sel=o.querySelector('.noval-s');
+    items.forEach((it,i)=>{it.classList.toggle('on',i===activeIdx)});
+    const ai=items[activeIdx];if(ai&&sel){sel.style.left=ai.offsetLeft+'px';sel.style.width=ai.offsetWidth+'px'}
   });
+}
 
-  // ===== GET ACCESS =====
-  function getAccess() {
-    const msg = encodeURIComponent("Hey Rivela, I'm interested in AI creatives for my brand. Please get me access.");
-    window.open('https://wa.me/256770892824?text=' + msg, '_blank');
-  }
+// CAROUSEL
+function cslInit(id,n){cslS[id]={c:0,t:n};cslDots(id)}
+function cslMove(id,d){const s=cslS[id];if(!s)return;s.c=(s.c+d+s.t)%s.t;const t=document.getElementById(id+'-t')||document.getElementById(id==='pd'?'pd-csl-t':'');if(t)t.style.transform='translateX(-'+s.c*100+'%)';cslDots(id)}
+function cslGo(id,i){const s=cslS[id];if(!s)return;s.c=i;const t=document.getElementById(id+'-t')||document.getElementById(id==='pd'?'pd-csl-t':'');if(t)t.style.transform='translateX(-'+s.c*100+'%)';cslDots(id)}
+function cslDots(id){const d=document.getElementById(id+'-dots');if(!d)return;const s=cslS[id];d.innerHTML='';for(let i=0;i<s.t;i++){const dot=document.createElement('span');dot.className='csl-dot'+(i===s.c?' on':'');dot.onclick=()=>cslGo(id,i);d.appendChild(dot)}}
 
-  function bizGetAccess() {
-    if (!projectInfoFilled) return;
-    const stored = sessionStorage.getItem('rivela_project_data');
-    let msg = "Hey Rivela, I've completed my Project Inquiry. Here are my details:\n\n";
-    if (stored) {
-      const data = JSON.parse(stored);
-      msg += `Name: ${data.name}\nContact: ${data.contact}\nCompany/Role: ${data.company}\nProject Type: ${data.types}\nDescription: ${data.desc}\nBudget: ${data.budget}\nRetainer: ${data.retainer}\nBrand Assets: ${data.assets}\nExtra: ${data.extra}`;
-    }
-    window.open('https://wa.me/256770892824?text=' + encodeURIComponent(msg), '_blank');
-  }
-
-  // ===== PROJECT INFO =====
-  function toggleChip(el) { el.classList.toggle('selected'); }
-  function selectRetainer(el, val) {
-    document.querySelectorAll('.retainer-btn').forEach(b => b.classList.remove('selected'));
-    el.classList.add('selected');
-    retainerValue = val;
-  }
-
-  function submitProjectInquiry() {
-    const name = document.getElementById('fi-name').value.trim();
-    const contact = document.getElementById('fi-contact').value.trim();
-    const desc = document.getElementById('fi-desc').value.trim();
-    const budget = document.getElementById('fi-budget').value.trim();
-    if (!name || !contact || !desc || !budget) { alert('Please fill in all required fields.'); return; }
-    const selectedTypes = [...document.querySelectorAll('.chip.selected')].map(c => c.textContent).join(', ');
-    const data = {
-      name, contact,
-      company: document.getElementById('fi-company').value.trim(),
-      types: selectedTypes || 'Not specified',
-      desc, budget,
-      retainer: retainerValue || 'Not specified',
-      assets: document.getElementById('fi-assets').value.trim() || 'None',
-      extra: document.getElementById('fi-extra').value.trim() || 'None'
-    };
-    sessionStorage.setItem('rivela_project_data', JSON.stringify(data));
-    projectInfoFilled = true;
-    const getBtn = document.getElementById('getAccessBizBtn');
-    if (getBtn) getBtn.classList.remove('disabled-btn');
-    const navBtn = document.getElementById('navGetAccessBiz');
-    if (navBtn) navBtn.classList.remove('disabled-btn');
-    setTimeout(() => showPage('business'), 800);
-  }
-
-  // ===== MAIN CENTER CAROUSEL =====
-  function renderCarousel(type) {
-    const state = carousels[type];
-    const boxId = type === 'free' ? 'carouselFree' : 'carouselBiz';
-    const dotsId = type === 'free' ? 'dotsFree' : 'dotsBiz';
-    const box = document.getElementById(boxId);
-    if (!box || state.images.length === 0) return;
-
-    box.innerHTML = '';
-
-    // Images
-    state.images.forEach((src, i) => {
-      const img = document.createElement('img');
-      img.src = src;
-      img.alt = 'Rivela creative ' + (i + 1);
-      img.style.cssText = `width:100%;height:100%;object-fit:cover;display:${i === state.current ? 'block' : 'none'};`;
-      img.onclick = () => openLightboxSingle(src);
-      box.appendChild(img);
-    });
-
-    // Nav buttons
-    const prevBtn = document.createElement('button');
-    prevBtn.className = 'carousel-nav prev-nav';
-    prevBtn.innerHTML = '‹';
-    prevBtn.onclick = () => prevSlide(type);
-    box.appendChild(prevBtn);
-
-    const nextBtn = document.createElement('button');
-    nextBtn.className = 'carousel-nav next-nav';
-    nextBtn.innerHTML = '›';
-    nextBtn.onclick = () => nextSlide(type);
-    box.appendChild(nextBtn);
-
-    // Dots
-    const dotsWrap = document.createElement('div');
-    dotsWrap.className = 'carousel-dots';
-    dotsWrap.id = dotsId;
-    state.images.forEach((_, i) => {
-      const dot = document.createElement('div');
-      dot.className = 'carousel-dot' + (i === state.current ? ' active' : '');
-      dot.onclick = () => goToSlide(type, i);
-      dotsWrap.appendChild(dot);
-    });
-    box.appendChild(dotsWrap);
-  }
-
-  function prevSlide(type) {
-    const s = carousels[type];
-    s.current = (s.current - 1 + s.images.length) % s.images.length;
-    renderCarousel(type);
-  }
-  function nextSlide(type) {
-    const s = carousels[type];
-    s.current = (s.current + 1) % s.images.length;
-    renderCarousel(type);
-  }
-  function goToSlide(type, index) {
-    carousels[type].current = index;
-    renderCarousel(type);
-  }
-
-  // ===== CIRCLE CAROUSELS (Business) =====
-  function circleCarouselPrev(type) {
-    const s = circleCarousels[type];
-    s.current = (s.current - 1 + s.images.length) % s.images.length;
-    updateCircleImg(type);
-  }
-  function circleCarouselNext(type) {
-    const s = circleCarousels[type];
-    s.current = (s.current + 1) % s.images.length;
-    updateCircleImg(type);
-  }
-  function updateCircleImg(type) {
-    const s = circleCarousels[type];
-    const imgId = type === 'products' ? 'circleLeftBizImg' : 'circleRightBizImg';
-    const el = document.getElementById(imgId);
-    if (el) el.src = s.images[s.current];
-  }
-
-  // ===== LIGHTBOX =====
-  // Single image lightbox (freelancer circles + center carousel)
-  function openLightboxSingle(src) {
-    document.getElementById('lightboxImg').src = src;
-    document.getElementById('lightboxGalleryNav').style.display = 'none';
-    document.getElementById('lightbox').classList.add('open');
-    lightboxGallery = null;
-    lightboxGalleryIndex = 0;
-  }
-
-  // Gallery lightbox (business circles - full ratio, navigable)
-  let lightboxGallery = null;
-  let lightboxGalleryIndex = 0;
-
-  function openCircleCarousel(type, startIndex) {
-    lightboxGallery = circleCarousels[type].images;
-    lightboxGalleryIndex = startIndex;
-    document.getElementById('lightboxImg').src = lightboxGallery[lightboxGalleryIndex];
-    document.getElementById('lightboxGalleryNav').style.display = 'flex';
-    document.getElementById('lightbox').classList.add('open');
-  }
-
-  function lightboxPrev() {
-    if (!lightboxGallery) return;
-    lightboxGalleryIndex = (lightboxGalleryIndex - 1 + lightboxGallery.length) % lightboxGallery.length;
-    document.getElementById('lightboxImg').src = lightboxGallery[lightboxGalleryIndex];
-  }
-  function lightboxNext() {
-    if (!lightboxGallery) return;
-    lightboxGalleryIndex = (lightboxGalleryIndex + 1) % lightboxGallery.length;
-    document.getElementById('lightboxImg').src = lightboxGallery[lightboxGalleryIndex];
-  }
-
-  function closeLightbox() {
-    document.getElementById('lightbox').classList.remove('open');
-  }
-
-  document.getElementById('lightbox').addEventListener('click', function(e) {
-    if (e.target === this) closeLightbox();
+// PRODUCTS PAGE
+function setPrdSize(sz){
+  prSize=sz;
+  document.querySelectorAll('#p-ssel .ssel-i').forEach(o=>o.classList.toggle('on',o.textContent.toLowerCase()===sz));
+  renderPGrid();
+}
+function renderPGrid(){
+  const g=document.getElementById('p-grid');g.innerHTML='';
+  PR.forEach(p=>{
+    const sz=prSize==='large'&&p.l?p.l:p.s;
+    const d=document.createElement('div');d.className='pcard';
+    d.innerHTML=`<img class="pcard-img" src="${C}${sz.i}" alt="${p.nm}" onclick="openPD('${p.id}')"><div class="pcard-body"><div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:4px"><div class="qctrl"><button class="qbtn" onclick="event.stopPropagation();chgGQ('${p.id}',-1)">−</button><span class="qval" id="gq-${p.id}">1</span><button class="qbtn" onclick="event.stopPropagation();chgGQ('${p.id}',1)">+</button></div><span style="cursor:pointer" onclick="event.stopPropagation();addPrdCart('${p.id}')"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg></span></div><div class="pcard-name" onclick="openPD('${p.id}')">${p.nm}</div><div class="pcard-price">Ush ${sz.p.toLocaleString()}</div><div class="pcard-cap">${p.s.c}${p.l?' / '+p.l.c:''}</div></div>`;
+    g.appendChild(d);
   });
+}
+let gq={};
+function chgGQ(id,d){if(!gq[id])gq[id]=1;gq[id]=Math.max(1,gq[id]+d);const e=document.getElementById('gq-'+id);if(e)e.textContent=gq[id]}
 
-  document.addEventListener('keydown', e => {
-    if (e.key === 'Escape') { closeLightbox(); closeMobileMenu(); closeVideoLightbox(); }
-    if (e.key === 'ArrowLeft' && lightboxGallery) lightboxPrev();
-    if (e.key === 'ArrowRight' && lightboxGallery) lightboxNext();
+// SKINTYPES PAGE
+function renderSTGrid(){
+  const g=document.getElementById('st-grid');g.innerHTML='';
+  PK.forEach(pk=>{
+    const d=document.createElement('div');d.className='pcard';d.onclick=()=>openSTD(pk.id);
+    d.innerHTML=`<div style="position:relative"><img class="pcard-img" src="${C}${pk.bb}" alt="${pk.nm}" style="aspect-ratio:1/1;object-fit:cover"><div style="position:absolute;bottom:8px;right:8px;background:var(--bk);color:var(--w);padding:4px 12px;border-radius:6px;font-size:10px;font-weight:600;cursor:pointer">View</div></div><div class="pcard-body"><div class="pcard-name">${pk.nm}</div><div class="pcard-price">Ush ${pk.lp.toLocaleString()} all large</div><div class="pcard-price" style="color:var(--g99)">Ush ${pk.sp.toLocaleString()} all small</div></div>`;
+    g.appendChild(d);
   });
+}
 
-  // ===== AUTO-ADVANCE CENTER CAROUSEL =====
-  setInterval(() => {
-    ['free', 'biz'].forEach(type => {
-      if (carousels[type].images.length > 1) nextSlide(type);
-    });
-  }, 4000);
+// SKINTYPE DETAIL
+function openSTD(id){
+  curPKID=id;const pk=PK.find(p=>p.id===id);if(!pk)return;
+  document.getElementById('std-bb').src=C+pk.bb;
+  document.getElementById('std-ba').src=C+pk.ba;
+  document.getElementById('std-name').textContent=pk.nm;
+  document.getElementById('std-lp').textContent='Ush '+pk.lp.toLocaleString();
+  document.getElementById('std-sp').textContent='Ush '+pk.sp.toLocaleString();
+  document.getElementById('std-msg').textContent=pk.d;
+  const names=pk.it.map(c=>PR.find(p=>p.id===c)?.nm).filter(Boolean);
+  document.getElementById('std-pl').textContent=names.join('. ');
+  renderSTDPGrid();go('std');
+}
+function setSTDSize(sz){
+  stdSize=sz;
+  document.querySelectorAll('#std-ssel .ssel-i').forEach(o=>o.classList.toggle('on',o.textContent.toLowerCase()===sz));
+  renderSTDPGrid();
+}
+function renderSTDPGrid(){
+  const pk=PK.find(p=>p.id===curPKID);if(!pk)return;
+  const g=document.getElementById('std-pgrid');g.innerHTML='';
+  pk.it.forEach(c=>{
+    const p=PR.find(pr=>pr.id===c);if(!p)return;
+    const sz=stdSize==='large'&&p.l?p.l:p.s;
+    const d=document.createElement('div');d.className='pcard';
+    d.innerHTML=`<img class="pcard-img" src="${C}${sz.i}" alt="${p.nm}" onclick="openPD('${p.id}')"><div class="pcard-body"><div class="pcard-name">${p.nm}</div><div class="pcard-price">Ush ${sz.p.toLocaleString()}</div><div class="pcard-cap">${sz.c}</div></div>`;
+    g.appendChild(d);
+  });
+}
+function buyPkg(sz){
+  const pk=PK.find(p=>p.id===curPKID);if(!pk)return;
+  const pr=sz==='large'?pk.lp:pk.sp;
+  const lbl=pk.nm+' ('+sz+')';
+  window.open('https://wa.me/'+WA+'?text='+encodeURIComponent('Hi Celara! I\'d like to order: '+lbl+' — Ush '+pr.toLocaleString()),'_blank');
+}
+
+// PRODUCT DETAIL
+function openPD(id){
+  curPID=id;prevPage=curPage;const p=PR.find(pr=>pr.id===id);if(!p)return;
+  document.getElementById('pd-title').textContent=p.nm;
+  pdSize=prSize||'small';if(!p.l&&pdSize==='large')pdSize='small';
+  pdQty=1;document.getElementById('pd-qty').textContent='1';
+  document.querySelectorAll('#pd-ssel .ssel-i').forEach(o=>{
+    o.classList.toggle('on',o.textContent.toLowerCase()===pdSize);
+    if(o.textContent.toLowerCase()==='large'&&!p.l)o.style.opacity='.3';else o.style.opacity='1';
+  });
+  updPDCsl();updPDDet();
+  document.getElementById('pd-desc').textContent=p.d;
+  document.getElementById('pd-howto').textContent=p.h;
+  document.getElementById('pd-ing').textContent=p.ig;
+  renderSug();go('pd');
+}
+function updPDCsl(){
+  const p=PR.find(pr=>pr.id===curPID);if(!p)return;
+  const sz=pdSize==='large'&&p.l?p.l:p.s;
+  const t=document.getElementById('pd-csl-t');
+  t.innerHTML=`<div class="csl-sl"><img src="${C}${sz.i}" alt="${p.nm}" style="aspect-ratio:1/1;object-fit:cover;border-radius:8px"></div><div class="csl-sl"><video src="${C}${p.v}" controls style="aspect-ratio:1/1;object-fit:cover;border-radius:8px;width:100%"></video></div><div class="csl-sl"><img src="${C}${p.cb}" alt="${p.nm} sizes" style="aspect-ratio:1/1;object-fit:cover;border-radius:8px"></div>`;
+  cslInit('pd',3);
+}
+function updPDDet(){
+  const p=PR.find(pr=>pr.id===curPID);if(!p)return;
+  const sz=pdSize==='large'&&p.l?p.l:p.s;
+  document.getElementById('pd-price').textContent='Ush '+sz.p.toLocaleString();
+  document.getElementById('pd-cap').textContent=sz.c;
+}
+function setPDSize(sz){
+  const p=PR.find(pr=>pr.id===curPID);if(!p)return;if(sz==='large'&&!p.l)return;
+  pdSize=sz;
+  document.querySelectorAll('#pd-ssel .ssel-i').forEach(o=>o.classList.toggle('on',o.textContent.toLowerCase()===sz));
+  updPDCsl();updPDDet();
+}
+function chgQty(d){pdQty=Math.max(1,pdQty+d);document.getElementById('pd-qty').textContent=pdQty}
+function buyPD(){
+  const p=PR.find(pr=>pr.id===curPID);if(!p)return;
+  const sz=pdSize==='large'&&p.l?p.l:p.s;
+  const pr=sz.p*pdQty;
+  const lbl=p.nm+' ('+pdSize+') x'+pdQty;
+  window.open('https://wa.me/'+WA+'?text='+encodeURIComponent('Hi Celara! I\'d like to order: '+lbl+' — Ush '+pr.toLocaleString()),'_blank');
+}
+function addPrdCart(id){
+  const p=PR.find(pr=>pr.id===id);if(!p)return;
+  const sz=prSize==='large'&&p.l?p.l:p.s;
+  const qty=gq[id]||1;
+  cart.push({nm:p.nm+' ('+prSize+')',p:sz.p,q:qty});
+  updBadges();openC();
+}
+function goBack(){go(prevPage||'home')}
+
+function renderSug(){
+  const c=document.getElementById('pd-sug');c.innerHTML='';
+  const sugs=[];
+  PK.filter(p=>p.id!==curPKID).sort(()=>Math.random()-.5).slice(0,2).forEach(pk=>sugs.push({t:'pk',id:pk.id,nm:pk.nm,pr:'Ush '+pk.sp.toLocaleString(),im:pk.bb}));
+  PR.filter(p=>p.id!==curPID).sort(()=>Math.random()-.5).slice(0,4).forEach(p=>sugs.push({t:'pr',id:p.id,nm:p.nm,pr:'Ush '+p.s.p.toLocaleString(),im:p.s.i}));
+  sugs.slice(0,6).forEach(s=>{
+    const d=document.createElement('div');d.className='pcard';d.style.cursor='pointer';
+    d.onclick=()=>{if(s.t==='pr')openPD(s.id);else openSTD(s.id)};
+    d.innerHTML=`<img class="pcard-img" src="${C}${s.im}" alt="${s.nm}" style="aspect-ratio:1/1;object-fit:cover"><div class="pcard-body"><div class="pcard-name">${s.nm}</div><div class="pcard-price">${s.pr}</div></div>`;
+    c.appendChild(d);
+  });
+}
+
+// CART
+function updBadges(){
+  const n=cart.length;
+  document.querySelectorAll('.cbadge').forEach(b=>{b.style.display=n>0?'flex':'none';b.textContent=n});
+}
+function openC(){document.getElementById('cov').classList.add('show');renderCart()}
+function closeC(){document.getElementById('cov').classList.remove('show')}
+function renderCart(){
+  const c=document.getElementById('citems');
+  if(!cart.length){c.innerHTML='<p style="font-size:13px;color:var(--g55);text-align:center;margin-top:2rem">Your cart is empty</p>';document.getElementById('ctot').textContent='Ush 0';return}
+  c.innerHTML='';let tot=0;
+  cart.forEach((it,i)=>{
+    tot+=it.p*it.q;
+    const d=document.createElement('div');d.className='cart-item';
+    d.innerHTML=`<div><p style="font-size:12px;font-weight:500">${it.nm}</p><p style="font-size:10px;color:var(--g55)">Qty: ${it.q} · Ush ${(it.p*it.q).toLocaleString()}</p></div><span style="cursor:pointer;font-size:18px" onclick="rmCart(${i})">×</span>`;
+    c.appendChild(d);
+  });
+  document.getElementById('ctot').textContent='Ush '+tot.toLocaleString();
+}
+function rmCart(i){cart.splice(i,1);renderCart();updBadges()}
+function checkout(){
+  if(!cart.length)return;
+  let m='Hi Celara! I\'d like to order:\n',tot=0;
+  cart.forEach(it=>{const s=it.p*it.q;tot+=s;m+=it.nm+' — Ush '+s.toLocaleString()+'\n'});
+  m+='Total: Ush '+tot.toLocaleString();
+  window.open('https://wa.me/'+WA+'?text='+encodeURIComponent(m),'_blank');
+}
+
+// SEARCH
+function openS(){document.getElementById('sov').classList.add('show');document.getElementById('sinp').value='';document.getElementById('sres').innerHTML='';setTimeout(()=>document.getElementById('sinp').focus(),100)}
+function closeS(){document.getElementById('sov').classList.remove('show')}
+function doSearch(q){
+  const r=document.getElementById('sres');r.innerHTML='';if(!q.trim())return;
+  const ql=q.toLowerCase();let found=[];
+  PR.forEach(p=>{if(p.nm.toLowerCase().includes(ql))found.push({t:'pr',id:p.id,nm:p.nm,pr:'Ush '+p.s.p.toLocaleString(),im:p.s.i})});
+  PK.forEach(pk=>{if(pk.nm.toLowerCase().includes(ql))found.push({t:'pk',id:pk.id,nm:pk.nm,pr:'Ush '+pk.sp.toLocaleString(),im:pk.bb})});
+  if(!found.length){
+    r.innerHTML='<p style="font-size:13px;font-weight:600;margin-bottom:6px">Oops, not found</p><p style="font-size:11px;color:var(--g55);margin-bottom:8px">You may also like</p>';
+    found=[...PR.slice(0,3).map(p=>({t:'pr',id:p.id,nm:p.nm,pr:'Ush '+p.s.p.toLocaleString(),im:p.s.i})),...PK.slice(0,2).map(pk=>({t:'pk',id:pk.id,nm:pk.nm,pr:'Ush '+pk.sp.toLocaleString(),im:pk.bb}))];
+  }
+  found.forEach(s=>{
+    const d=document.createElement('div');d.className='s-ritem';
+    d.onclick=()=>{closeS();if(s.t==='pr')openPD(s.id);else openSTD(s.id)};
+    d.innerHTML=`<img src="${C}${s.im}" alt="${s.nm}"><div><p style="font-size:12px;font-weight:500">${s.nm}</p><p style="font-size:10px;color:var(--g55)">${s.pr}</p></div>`;
+    r.appendChild(d);
+  });
+}
+
+// MENU
+function openM(){document.getElementById('mov').classList.add('show')}
+function closeM(){document.getElementById('mov').classList.remove('show')}
+
+// LIGHTBOX
+function openLB(src){document.getElementById('lb-img').src=src;document.getElementById('lb').classList.add('show')}
+function closeLB(){document.getElementById('lb').classList.remove('show')}
+
+// EXPANDABLE
+function togExp(h){const c=h.nextElementSibling;const ic=h.querySelector('span:last-child');c.classList.toggle('open');ic.textContent=c.classList.contains('open')?'−':'+'}
+
+// HOME BA
+function startHBA(){stopHBA();hBAIdx=0;hBAInt=setInterval(()=>{hBAIdx=(hBAIdx+1)%7;document.getElementById('h-bb').src=C+'bb'+(hBAIdx+1)+'.png';document.getElementById('h-ba').src=C+'ba'+(hBAIdx+1)+'.png'},4000)}
+function stopHBA(){if(hBAInt)clearInterval(hBAInt)}
+
+// INIT
+function init(){
+  renderPGrid();renderSTGrid();cslInit('ph',4);updOvals();startHBA();
+}
+document.addEventListener('DOMContentLoaded',init);
 </script>
 </body>
 </html>
