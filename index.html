@@ -270,8 +270,8 @@ img{max-width:100%;display:block}a{text-decoration:none;color:inherit}button{cur
 <!-- BEFORE/AFTER -->
 <section class="container" style="margin-top:1.5rem">
   <div class="ba-wrap" id="h-ba">
-    <div class="ba-side" onclick="openLB(document.getElementById('h-bb').src)"><img id="h-bb" src="https://models.valts.online/celara/bb1.png" alt="Before"><div class="ba-lbl">Before</div></div>
-    <div class="ba-side" onclick="openLB(document.getElementById('h-ba').src)"><img id="h-ba" src="https://models.valts.online/celara/ba1.png" alt="After"><div class="ba-lbl">After</div></div>
+    <div class="ba-side" onclick="openLB(document.getElementById('h-bb').src)"><img id="h-bb" src="https://models.valts.online/celara/bb1.png" alt="Before"></div>
+    <div class="ba-side" onclick="openLB(document.getElementById('h-ba').src)"><img id="h-ba" src="https://models.valts.online/celara/ba1.png" alt="After"></div>
   </div>
 </section>
 
@@ -502,8 +502,8 @@ img{max-width:100%;display:block}a{text-decoration:none;color:inherit}button{cur
 <!-- BA SIDE BY SIDE -->
 <section class="container" style="margin-top:10px">
   <div class="ba-wrap">
-    <div class="ba-side" onclick="openLB(document.getElementById('std-bb').src)"><img id="std-bb" src="" alt="Before"><div class="ba-lbl">Before</div></div>
-    <div class="ba-side" onclick="openLB(document.getElementById('std-ba').src)"><img id="std-ba" src="" alt="After"><div class="ba-lbl">After</div></div>
+    <div class="ba-side" onclick="openLB(document.getElementById('std-bb').src)"><img id="std-bb" src="" alt="Before"></div>
+    <div class="ba-side" onclick="openLB(document.getElementById('std-ba').src)"><img id="std-ba" src="" alt="After"></div>
   </div>
 </section>
 
@@ -737,10 +737,12 @@ function updOvals(){
 }
 
 // CAROUSEL
-function cslInit(id,n){cslS[id]={c:0,t:n};cslDots(id)}
-function cslMove(id,d){const s=cslS[id];if(!s)return;s.c=(s.c+d+s.t)%s.t;const t=document.getElementById(id+'-t')||document.getElementById(id==='pd'?'pd-csl-t':'');if(t)t.style.transform='translateX(-'+s.c*100+'%)';cslDots(id)}
-function cslGo(id,i){const s=cslS[id];if(!s)return;s.c=i;const t=document.getElementById(id+'-t')||document.getElementById(id==='pd'?'pd-csl-t':'');if(t)t.style.transform='translateX(-'+s.c*100+'%)';cslDots(id)}
+function cslInit(id,n){cslS[id]={c:0,t:n,auto:null};cslDots(id)}
+function cslMove(id,d){const s=cslS[id];if(!s)return;s.c=(s.c+d+s.t)%s.t;const t=document.getElementById(id+'-csl-t')||document.getElementById(id+'-t');if(t)t.style.transform='translateX(-'+s.c*100+'%)';cslDots(id)}
+function cslGo(id,i){const s=cslS[id];if(!s)return;s.c=i;const t=document.getElementById(id+'-csl-t')||document.getElementById(id+'-t');if(t)t.style.transform='translateX(-'+s.c*100+'%)';cslDots(id)}
 function cslDots(id){const d=document.getElementById(id+'-dots');if(!d)return;const s=cslS[id];d.innerHTML='';for(let i=0;i<s.t;i++){const dot=document.createElement('span');dot.className='csl-dot'+(i===s.c?' on':'');dot.onclick=()=>cslGo(id,i);d.appendChild(dot)}}
+function cslAuto(id,ms){const s=cslS[id];if(!s)return;if(s.auto)clearInterval(s.auto);s.auto=setInterval(()=>cslMove(id,1),ms||5000)}
+function cslStopAuto(id){const s=cslS[id];if(s&&s.auto){clearInterval(s.auto);s.auto=null}}
 
 // PRODUCTS PAGE
 function setPrdSize(sz){
@@ -752,13 +754,15 @@ function renderPGrid(){
   const g=document.getElementById('p-grid');g.innerHTML='';
   PR.forEach(p=>{
     const sz=prSize==='large'&&p.l?p.l:p.s;
+    const q=gq[p.id]||1;
+    const totalPrice=sz.p*q;
     const d=document.createElement('div');d.className='pcard';
-    d.innerHTML=`<img class="pcard-img" src="${C}${sz.i}" alt="${p.nm}" onclick="openPD('${p.id}')"><div class="pcard-body"><div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:4px"><div class="qctrl"><button class="qbtn" onclick="event.stopPropagation();chgGQ('${p.id}',-1)">−</button><span class="qval" id="gq-${p.id}">1</span><button class="qbtn" onclick="event.stopPropagation();chgGQ('${p.id}',1)">+</button></div><span style="cursor:pointer" onclick="event.stopPropagation();addPrdCart('${p.id}')"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg></span></div><div class="pcard-name" onclick="openPD('${p.id}')">${p.nm}</div><div class="pcard-price">Ush ${sz.p.toLocaleString()}</div><div class="pcard-cap">${p.s.c}${p.l?' / '+p.l.c:''}</div></div>`;
+    d.innerHTML=`<div style="position:relative"><img class="pcard-img" src="${C}${sz.i}" alt="${p.nm}" onclick="openPD('${p.id}')"><div style="position:absolute;bottom:8px;right:8px;background:var(--bk);color:var(--w);padding:4px 12px;border-radius:6px;font-size:10px;font-weight:600;cursor:pointer" onclick="event.stopPropagation();openPD('${p.id}')">View</div></div><div class="pcard-body"><div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:4px"><div class="qctrl"><button class="qbtn" onclick="event.stopPropagation();chgGQ('${p.id}',-1)">−</button><span class="qval" id="gq-${p.id}">${q}</span><button class="qbtn" onclick="event.stopPropagation();chgGQ('${p.id}',1)">+</button></div><span style="cursor:pointer" onclick="event.stopPropagation();addPrdCart('${p.id}')"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg></span></div><div class="pcard-name" onclick="openPD('${p.id}')">${p.nm}</div><div class="pcard-price" id="gprice-${p.id}">Ush ${totalPrice.toLocaleString()}</div><div class="pcard-cap">${p.s.c}${p.l?' / '+p.l.c:''}</div></div>`;
     g.appendChild(d);
   });
 }
 let gq={};
-function chgGQ(id,d){if(!gq[id])gq[id]=1;gq[id]=Math.max(1,gq[id]+d);const e=document.getElementById('gq-'+id);if(e)e.textContent=gq[id]}
+function chgGQ(id,d){if(!gq[id])gq[id]=1;gq[id]=Math.max(1,gq[id]+d);const e=document.getElementById('gq-'+id);if(e)e.textContent=gq[id];const p=PR.find(pr=>pr.id===id);if(p){const sz=prSize==='large'&&p.l?p.l:p.s;const pe=document.getElementById('gprice-'+id);if(pe)pe.textContent='Ush '+(sz.p*gq[id]).toLocaleString()}}
 
 // SKINTYPES PAGE
 function renderSTGrid(){
@@ -795,7 +799,7 @@ function renderSTDPGrid(){
     const p=PR.find(pr=>pr.id===c);if(!p)return;
     const sz=stdSize==='large'&&p.l?p.l:p.s;
     const d=document.createElement('div');d.className='pcard';
-    d.innerHTML=`<img class="pcard-img" src="${C}${sz.i}" alt="${p.nm}" onclick="openPD('${p.id}')"><div class="pcard-body"><div class="pcard-name">${p.nm}</div><div class="pcard-price">Ush ${sz.p.toLocaleString()}</div><div class="pcard-cap">${sz.c}</div></div>`;
+    d.innerHTML=`<div style="position:relative"><img class="pcard-img" src="${C}${sz.i}" alt="${p.nm}" onclick="openPD('${p.id}')"><div style="position:absolute;bottom:8px;right:8px;background:var(--bk);color:var(--w);padding:4px 12px;border-radius:6px;font-size:10px;font-weight:600;cursor:pointer" onclick="event.stopPropagation();openPD('${p.id}')">View</div></div><div class="pcard-body"><div class="pcard-name" onclick="openPD('${p.id}')">${p.nm}</div><div class="pcard-price">Ush ${sz.p.toLocaleString()}</div><div class="pcard-cap">${sz.c}</div></div>`;
     g.appendChild(d);
   });
 }
@@ -931,12 +935,12 @@ function closeLB(){document.getElementById('lb').classList.remove('show')}
 function togExp(h){const c=h.nextElementSibling;const ic=h.querySelector('span:last-child');c.classList.toggle('open');ic.textContent=c.classList.contains('open')?'−':'+'}
 
 // HOME BA
-function startHBA(){stopHBA();hBAIdx=0;hBAInt=setInterval(()=>{hBAIdx=(hBAIdx+1)%7;document.getElementById('h-bb').src=C+'bb'+(hBAIdx+1)+'.png';document.getElementById('h-ba').src=C+'ba'+(hBAIdx+1)+'.png'},4000)}
-function stopHBA(){if(hBAInt)clearInterval(hBAInt)}
+function startHBA(){stopHBA();hBAIdx=0;hBAInt=setInterval(()=>{hBAIdx=(hBAIdx+1)%7;var bbEl=document.getElementById('h-bb');var baEl=document.getElementById('h-ba');if(bbEl)bbEl.src=C+'bb'+(hBAIdx+1)+'.png';if(baEl)baEl.src=C+'ba'+(hBAIdx+1)+'.png'},4000)}
+function stopHBA(){if(hBAInt){clearInterval(hBAInt);hBAInt=null}}
 
 // INIT
 function init(){
-  renderPGrid();renderSTGrid();cslInit('ph',4);updOvals();startHBA();
+  renderPGrid();renderSTGrid();cslInit('ph',4);cslAuto('ph',5000);updOvals();startHBA();
 }
 document.addEventListener('DOMContentLoaded',init);
 </script>
