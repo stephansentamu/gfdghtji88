@@ -269,7 +269,7 @@ img{max-width:100%;display:block}a{text-decoration:none;color:inherit}button{cur
 
 <!-- BEFORE/AFTER -->
 <section class="container" style="margin-top:1.5rem">
-  <div class="ba-wrap" id="h-ba">
+  <div class="ba-wrap" id="h-ba-wrap">
     <div class="ba-side" onclick="openLB(document.getElementById('h-bb').src)"><img id="h-bb" src="https://models.valts.online/celara/bb1.png" alt="Before"></div>
     <div class="ba-side" onclick="openLB(document.getElementById('h-ba').src)"><img id="h-ba" src="https://models.valts.online/celara/ba1.png" alt="After"></div>
   </div>
@@ -836,7 +836,7 @@ function updPDCsl(){
 function updPDDet(){
   const p=PR.find(pr=>pr.id===curPID);if(!p)return;
   const sz=pdSize==='large'&&p.l?p.l:p.s;
-  document.getElementById('pd-price').textContent='Ush '+sz.p.toLocaleString();
+  document.getElementById('pd-price').textContent='Ush '+(sz.p*pdQty).toLocaleString();
   document.getElementById('pd-cap').textContent=sz.c;
 }
 function setPDSize(sz){
@@ -845,7 +845,7 @@ function setPDSize(sz){
   document.querySelectorAll('#pd-ssel .ssel-i').forEach(o=>o.classList.toggle('on',o.textContent.toLowerCase()===sz));
   updPDCsl();updPDDet();
 }
-function chgQty(d){pdQty=Math.max(1,pdQty+d);document.getElementById('pd-qty').textContent=pdQty}
+function chgQty(d){pdQty=Math.max(1,pdQty+d);document.getElementById('pd-qty').textContent=pdQty;updPDDet()}
 function buyPD(){
   const p=PR.find(pr=>pr.id===curPID);if(!p)return;
   const sz=pdSize==='large'&&p.l?p.l:p.s;
